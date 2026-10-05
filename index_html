@@ -1,183 +1,2265 @@
 <!DOCTYPE html>
 <html lang="am">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>የኢየሱስ ልጆች Apostolic Media</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<title>የኢየሱስ ልጆች Apostolic Media App 🕎</title>
 
-    body {
-      background: #f5f7fb;
-      color: #172033;
-    }
+<style>
+:root{
+  --navy:#07152d;
+  --navy2:#0d2142;
+  --gold:#d9ad45;
+  --gold2:#f4d27a;
+  --white:#ffffff;
+  --light:#f4f7fb;
+  --text:#172033;
+  --muted:#6c7485;
+  --danger:#c62828;
+  --success:#16845b;
+  --shadow:0 8px 25px rgba(7,21,45,.10);
+  --radius:18px;
+}
 
-    header {
-      background: #101d3a;
-      color: white;
-      padding: 25px 20px;
-      text-align: center;
-    }
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    header h1 {
-      font-size: 25px;
-      margin-bottom: 8px;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    header p {
-      opacity: 0.85;
-    }
+body{
+  font-family:Arial,"Noto Sans Ethiopic",sans-serif;
+  background:var(--light);
+  color:var(--text);
+  padding-bottom:80px;
+}
 
-    .hero {
-      margin: 20px;
-      padding: 25px;
-      border-radius: 18px;
-      background: #d9b44a;
-      color: #101d3a;
-    }
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
 
-    .hero h2 {
-      margin-bottom: 10px;
-    }
+button{
+  cursor:pointer;
+  border:0;
+}
 
-    .container {
-      padding: 0 20px 90px;
-    }
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
-    .section-title {
-      margin: 25px 0 12px;
-      font-size: 20px;
-    }
+/* HEADER */
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(7,21,45,.97);
+  color:white;
+  padding:13px 16px;
+  box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
 
-    .card {
-      background: white;
-      padding: 20px 12px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-    }
+.header-inner{
+  max-width:700px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
 
-    .icon {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 
-    .ad {
-      margin-top: 20px;
-      padding: 18px;
-      text-align: center;
-      border: 1px dashed #aaa;
-      border-radius: 15px;
-      background: white;
-      color: #777;
-    }
+.logo{
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  background:linear-gradient(145deg,var(--gold2),var(--gold));
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  font-weight:bold;
+  box-shadow:0 5px 15px rgba(217,173,69,.25);
+}
 
-    nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: white;
-      display: flex;
-      justify-content: space-around;
-      padding: 12px 5px;
-      box-shadow: 0 -3px 15px rgba(0,0,0,0.1);
-    }
+.brand-text h1{
+  font-size:15px;
+  line-height:1.35;
+}
 
-    nav div {
-      text-align: center;
-      font-size: 12px;
-    }
+.brand-text span{
+  color:var(--gold2);
+  font-size:11px;
+}
 
-    nav span {
-      display: block;
-      font-size: 21px;
-      margin-bottom: 3px;
-    }
-  </style>
+.header-actions{
+  display:flex;
+  gap:8px;
+}
+
+.icon-btn{
+  width:38px;
+  height:38px;
+  border-radius:12px;
+  background:rgba(255,255,255,.10);
+  color:white;
+  font-size:18px;
+}
+
+/* APP */
+
+.app{
+  max-width:700px;
+  margin:auto;
+  padding:16px;
+}
+
+/* SEARCH */
+
+.search-box{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:white;
+  padding:12px 14px;
+  border-radius:15px;
+  box-shadow:var(--shadow);
+  margin-bottom:16px;
+}
+
+.search-box input{
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  font-size:15px;
+}
+
+/* HERO */
+
+.hero{
+  background:
+    radial-gradient(circle at 85% 15%,rgba(244,210,122,.25),transparent 28%),
+    linear-gradient(135deg,var(--navy),var(--navy2));
+  color:white;
+  border-radius:24px;
+  padding:25px 20px;
+  margin-bottom:22px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.hero:after{
+  content:"🕎";
+  position:absolute;
+  right:-5px;
+  bottom:-18px;
+  font-size:100px;
+  opacity:.07;
+}
+
+.hero small{
+  color:var(--gold2);
+  font-weight:bold;
+}
+
+.hero h2{
+  font-size:27px;
+  margin:8px 0;
+  line-height:1.3;
+}
+
+.hero p{
+  color:#dce5f5;
+  font-size:14px;
+  line-height:1.7;
+  max-width:520px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:9px;
+  margin-top:18px;
+  flex-wrap:wrap;
+}
+
+/* BUTTONS */
+
+.btn{
+  padding:11px 16px;
+  border-radius:12px;
+  font-weight:bold;
+  font-size:13px;
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:var(--navy);
+}
+
+.btn-dark{
+  background:var(--navy);
+  color:white;
+}
+
+.btn-light{
+  background:white;
+  color:var(--navy);
+}
+
+.btn-outline{
+  background:transparent;
+  border:1px solid #d7dce5;
+  color:var(--text);
+}
+
+/* SECTION */
+
+.section{
+  margin-bottom:25px;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.section-head h3{
+  font-size:18px;
+}
+
+.section-head button{
+  background:transparent;
+  color:var(--gold);
+  font-weight:bold;
+  font-size:12px;
+}
+
+/* CARDS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.card{
+  background:white;
+  border-radius:var(--radius);
+  padding:15px;
+  box-shadow:var(--shadow);
+  border:1px solid #edf0f5;
+}
+
+.card-icon{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  background:#eef2f8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:23px;
+  margin-bottom:10px;
+}
+
+.card h4{
+  font-size:14px;
+  margin-bottom:5px;
+}
+
+.card p{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.card-actions{
+  display:flex;
+  gap:7px;
+  margin-top:12px;
+}
+
+.small-btn{
+  padding:8px 10px;
+  border-radius:9px;
+  background:#eef2f8;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.small-btn.gold{
+  background:var(--gold);
+  color:var(--navy);
+}
+
+/* FEATURE LIST */
+
+.list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.list-card{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  background:white;
+  padding:13px;
+  border-radius:16px;
+  box-shadow:var(--shadow);
+}
+
+.list-icon{
+  width:50px;
+  height:50px;
+  border-radius:14px;
+  background:var(--navy);
+  color:var(--gold2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  flex-shrink:0;
+}
+
+.list-info{
+  flex:1;
+}
+
+.list-info h4{
+  font-size:14px;
+  margin-bottom:4px;
+}
+
+.list-info p{
+  font-size:11px;
+  color:var(--muted);
+}
+
+/* PREMIUM */
+
+.premium{
+  background:linear-gradient(135deg,#111c35,#172a50);
+  color:white;
+  border-radius:22px;
+  padding:20px;
+  box-shadow:var(--shadow);
+}
+
+.premium h3{
+  color:var(--gold2);
+  margin-bottom:7px;
+}
+
+.premium p{
+  color:#d9e0ec;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.premium ul{
+  list-style:none;
+  margin:15px 0;
+}
+
+.premium li{
+  padding:5px 0;
+  font-size:13px;
+}
+
+/* AD */
+
+.ad-box{
+  background:#fff;
+  border:1px dashed #c7ceda;
+  border-radius:16px;
+  padding:18px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* SPONSOR */
+
+.sponsor{
+  background:#fffaf0;
+  border:1px solid #f0dca7;
+  border-radius:18px;
+  padding:17px;
+}
+
+.sponsor-label{
+  color:#9a751e;
+  font-size:10px;
+  font-weight:bold;
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+
+/* SUPPORT */
+
+.support{
+  background:white;
+  border-radius:20px;
+  padding:20px;
+  box-shadow:var(--shadow);
+}
+
+.support h3{
+  margin-bottom:7px;
+}
+
+.support p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+  margin-bottom:14px;
+}
+
+/* VIEW */
+
+.view{
+  display:none;
+}
+
+.view.active{
+  display:block;
+}
+
+/* PAGE TITLE */
+
+.page-title{
+  margin:8px 0 18px;
+}
+
+.page-title h2{
+  font-size:24px;
+}
+
+.page-title p{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:5px;
+}
+
+/* FILTER */
+
+.filters{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding-bottom:5px;
+  margin-bottom:15px;
+}
+
+.filter{
+  white-space:nowrap;
+  padding:8px 13px;
+  border-radius:20px;
+  background:white;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.filter.active{
+  background:var(--navy);
+  color:white;
+}
+
+/* SONG */
+
+.song-card{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:white;
+  padding:13px;
+  border-radius:17px;
+  box-shadow:var(--shadow);
+}
+
+.song-cover{
+  width:55px;
+  height:55px;
+  border-radius:15px;
+  background:linear-gradient(135deg,var(--navy),#284a7c);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--gold2);
+  font-size:22px;
+}
+
+.song-info{
+  flex:1;
+}
+
+.song-info h4{
+  font-size:14px;
+}
+
+.song-info span{
+  font-size:11px;
+  color:var(--muted);
+}
+
+.play{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:var(--gold);
+  color:var(--navy);
+  font-weight:bold;
+}
+
+/* LIBRARY */
+
+.file-card{
+  background:white;
+  border-radius:18px;
+  padding:15px;
+  box-shadow:var(--shadow);
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.file-icon{
+  width:48px;
+  height:48px;
+  border-radius:13px;
+  background:#f0e8d2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:21px;
+}
+
+.file-info{
+  flex:1;
+}
+
+.file-info h4{
+  font-size:13px;
+}
+
+.file-info p{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+/* VIDEO */
+
+.video{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.video-thumb{
+  height:145px;
+  background:
+    linear-gradient(135deg,rgba(7,21,45,.9),rgba(21,51,91,.8)),
+    #142d50;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:42px;
+}
+
+.video-body{
+  padding:14px;
+}
+
+.video-body h4{
+  font-size:14px;
+}
+
+.video-body p{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:5px;
+}
+
+/* ACCOUNT */
+
+.profile{
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  color:white;
+  border-radius:22px;
+  padding:22px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:15px;
+}
+
+.avatar{
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  background:var(--gold);
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:25px;
+  font-weight:bold;
+}
+
+.profile h3{
+  font-size:17px;
+}
+
+.profile p{
+  color:#cfd8e8;
+  font-size:12px;
+  margin-top:4px;
+}
+
+.menu{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.menu-item{
+  padding:16px;
+  display:flex;
+  align-items:center;
+  gap:13px;
+  border-bottom:1px solid #edf0f5;
+  font-size:14px;
+}
+
+.menu-item:last-child{
+  border-bottom:0;
+}
+
+.menu-icon{
+  width:35px;
+  height:35px;
+  border-radius:10px;
+  background:#eef2f8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ADMIN */
+
+.admin{
+  background:white;
+  padding:18px;
+  border-radius:18px;
+  box-shadow:var(--shadow);
+}
+
+.admin label{
+  display:block;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:6px;
+}
+
+.admin input,
+.admin textarea,
+.admin select{
+  width:100%;
+  padding:11px;
+  border:1px solid #d9dee7;
+  border-radius:10px;
+  outline:none;
+  margin-bottom:12px;
+}
+
+.admin textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+/* EMPTY */
+
+.empty{
+  text-align:center;
+  padding:35px 15px;
+  background:white;
+  border-radius:18px;
+  color:var(--muted);
+  box-shadow:var(--shadow);
+}
+
+.empty div{
+  font-size:35px;
+  margin-bottom:10px;
+}
+
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:300;
+  background:rgba(0,0,0,.55);
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-content{
+  background:white;
+  width:100%;
+  max-width:700px;
+  border-radius:24px 24px 0 0;
+  padding:22px;
+  max-height:85vh;
+  overflow-y:auto;
+}
+
+.modal-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.close{
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  background:#eef2f8;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:200;
+  height:68px;
+  background:rgba(255,255,255,.97);
+  border-top:1px solid #e6e9ef;
+  box-shadow:0 -5px 20px rgba(0,0,0,.08);
+}
+
+.nav-inner{
+  max-width:700px;
+  margin:auto;
+  height:100%;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+}
+
+.nav-btn{
+  background:transparent;
+  color:#7b8290;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+  font-size:10px;
+  min-width:55px;
+}
+
+.nav-btn span:first-child{
+  font-size:20px;
+}
+
+.nav-btn.active{
+  color:var(--navy);
+  font-weight:bold;
+}
+
+.nav-btn.active span:first-child{
+  color:var(--gold);
+}
+
+/* RESPONSIVE */
+
+@media(min-width:600px){
+  .grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .modal{
+    align-items:center;
+  }
+
+  .modal-content{
+    border-radius:22px;
+    width:90%;
+  }
+}
+
+.hidden{
+  display:none!important;
+}
+
+.text-gold{
+  color:var(--gold);
+}
+
+.mt{
+  margin-top:15px;
+}
+
+.mb{
+  margin-bottom:15px;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>✝️ የኢየሱስ ልጆች</h1>
-  <p>Apostolic Media</p>
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+
+    <div class="brand">
+      <div class="logo">🕎</div>
+
+      <div class="brand-text">
+        <h1>የኢየሱስ ልጆች</h1>
+        <span>Apostolic Media App</span>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="icon-btn" onclick="showView('search')">🔎</button>
+      <button class="icon-btn" onclick="showView('saved')">♡</button>
+    </div>
+
+  </div>
 </header>
 
-<div class="container">
+
+<main class="app">
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="view active">
+
+  <div class="search-box">
+    <span>🔎</span>
+    <input
+      type="search"
+      placeholder="ትምህርት፣ መዝሙር፣ መጽሐፍ ፈልግ..."
+      oninput="globalSearch(this.value)"
+    >
+  </div>
 
   <div class="hero">
-    <h2>ወደ አፕሊኬሽናችን እንኳን በደህና መጡ</h2>
-    <p>የመጽሐፍ ቅዱስ ትምህርቶች፣ መዝሙሮች፣ መጻሕፍት እና ቪዲዮዎች።</p>
-  </div>
 
-  <h2 class="section-title">ዋና ክፍሎች</h2>
+    <small>🕎 APOSTOLIC MEDIA</small>
 
-  <div class="cards">
+    <h2>
+      የእግዚአብሔርን ቃል<br>
+      እንማር፣ እንካፈል።
+    </h2>
 
-    <div class="card">
-      <div class="icon">📖</div>
-      <h3>Bible Teaching</h3>
-    </div>
+    <p>
+      የመጽሐፍ ቅዱስ ትምህርቶች፣
+      መዝሙሮች፣ መጻሕፍት፣ ቪዲዮዎች
+      እና ሌሎች አገልግሎቶች።
+    </p>
 
-    <div class="card">
-      <div class="icon">🎵</div>
-      <h3>Songs</h3>
-    </div>
+    <div class="hero-buttons">
+      <button class="btn btn-gold" onclick="showView('teaching')">
+        📖 ትምህርት ጀምር
+      </button>
 
-    <div class="card">
-      <div class="icon">📚</div>
-      <h3>Library</h3>
-    </div>
-
-    <div class="card">
-      <div class="icon">🎥</div>
-      <h3>Videos</h3>
+      <button class="btn btn-light" onclick="showView('library')">
+        📚 Library
+      </button>
     </div>
 
   </div>
 
-  <h2 class="section-title">Premium</h2>
 
-  <div class="card">
-    <div class="icon">⭐</div>
-    <h3>Premium Content</h3>
-    <p>ልዩ የጥናት እና የመማሪያ ይዘቶች</p>
+  <!-- CATEGORIES -->
+
+  <div class="section">
+
+    <div class="section-head">
+      <h3>ዋና ክፍሎች</h3>
+      <button onclick="showView('search')">ሁሉንም ፈልግ</button>
+    </div>
+
+    <div class="grid">
+
+      <div class="card" onclick="showView('teaching')">
+        <div class="card-icon">📖</div>
+        <h4>Bible Teaching</h4>
+        <p>የመጽሐፍ ቅዱስ ጥልቅ ትምህርቶች።</p>
+      </div>
+
+      <div class="card" onclick="showView('songs')">
+        <div class="card-icon">🎵</div>
+        <h4>Songs</h4>
+        <p>መዝሙሮችን ማዳመጥና ማከማቸት።</p>
+      </div>
+
+      <div class="card" onclick="showView('library')">
+        <div class="card-icon">📚</div>
+        <h4>Library</h4>
+        <p>PDF፣ Word እና የጽሑፍ ትምህርቶች።</p>
+      </div>
+
+      <div class="card" onclick="showView('videos')">
+        <div class="card-icon">🎥</div>
+        <h4>Videos</h4>
+        <p>የቪዲዮ ትምህርቶችና ስብከቶች።</p>
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="ad">
-    📢 Advertisement Area
+
+  <!-- FEATURED TEACHING -->
+
+  <div class="section">
+
+    <div class="section-head">
+      <h3>🕎 ተመራጭ ትምህርት</h3>
+      <button onclick="showView('teaching')">ሁሉንም</button>
+    </div>
+
+    <div class="list">
+
+      <div class="list-card">
+
+        <div class="list-icon">🕎</div>
+
+        <div class="list-info">
+          <h4>እግዚአብሔር አንድ ነው</h4>
+          <p>Bible Teaching • Apostolic</p>
+        </div>
+
+        <button class="small-btn gold"
+          onclick="openContent('እግዚአብሔር አንድ ነው','ይህ የማሳያ ይዘት ነው። በኋላ የራስህን ሙሉ የትምህርት ጽሑፍ እዚህ ማስገባት ትችላለህ።')">
+          ክፈት
+        </button>
+
+      </div>
+
+
+      <div class="list-card">
+
+        <div class="list-icon">📜</div>
+
+        <div class="list-info">
+          <h4>የኢየሱስ ስም</h4>
+          <p>Bible Study • Teaching</p>
+        </div>
+
+        <button class="small-btn"
+          onclick="openContent('የኢየሱስ ስም','የማሳያ ትምህርት። በAdmin ክፍል የራስህን ይዘት መጨመር ትችላለህ።')">
+          ክፈት
+        </button>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <h2 class="section-title">ድጋፍ ያድርጉ</h2>
 
-  <div class="card">
-    <div class="icon">❤️</div>
-    <h3>Support the Ministry</h3>
-    <p>የሚዲያ አገልግሎቱን ለመደገፍ</p>
+  <!-- SONGS -->
+
+  <div class="section">
+
+    <div class="section-head">
+      <h3>🎵 ተወዳጅ መዝሙሮች</h3>
+      <button onclick="showView('songs')">ሁሉንም</button>
+    </div>
+
+    <div class="list">
+
+      <div class="song-card">
+
+        <div class="song-cover">🎵</div>
+
+        <div class="song-info">
+          <h4>ኢየሱስ ነው ጌታ</h4>
+          <span>Apostolic Song</span>
+        </div>
+
+        <button class="play" onclick="playDemo(this)">▶</button>
+
+      </div>
+
+
+      <div class="song-card">
+
+        <div class="song-cover">🕎</div>
+
+        <div class="song-info">
+          <h4>በእምነት እንመላለስ</h4>
+          <span>Christian Song</span>
+        </div>
+
+        <button class="play" onclick="playDemo(this)">▶</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- PREMIUM -->
+
+  <div class="section">
+
+    <div class="premium">
+
+      <h3>⭐ Premium Content</h3>
+
+      <p>
+        ለPremium አባላት የተዘጋጁ ልዩ
+        ትምህርቶች፣ መጻሕፍት እና ዲጂታል ይዘቶች።
+      </p>
+
+      <ul>
+        <li>✓ ልዩ Bible Teachings</li>
+        <li>✓ Premium PDF / Books</li>
+        <li>✓ የተለየ የዲጂታል ይዘት</li>
+      </ul>
+
+      <button class="btn btn-gold" onclick="showView('premium')">
+        Premium ይመልከቱ
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- AD -->
+
+  <div class="section">
+
+    <div class="ad-box">
+      <strong>ADVERTISEMENT</strong>
+      <br><br>
+      የማስታወቂያ ቦታ
+      <br>
+      <small>በኋላ ከእውነተኛ Ads system ጋር ይገናኛል።</small>
+    </div>
+
+  </div>
+
+
+  <!-- SPONSOR -->
+
+  <div class="section">
+
+    <div class="sponsor">
+
+      <div class="sponsor-label">Sponsored Content</div>
+
+      <h4>የአጋር ድጋፍ</h4>
+
+      <p style="font-size:12px;color:var(--muted);margin-top:6px;">
+        ለወደፊት የሚመጡ ስፖንሰሮችና የንግድ አጋሮች
+        የሚታዩበት ቦታ።
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- SUPPORT -->
+
+  <div class="section">
+
+    <div class="support">
+
+      <h3>🤝 ይደግፉን</h3>
+
+      <p>
+        ይህን የChristian Media አገልግሎት
+        ለማስቀጠል የምታደርጉት ድጋፍ እጅግ ጠቃሚ ነው።
+      </p>
+
+      <button class="btn btn-dark" onclick="showView('support')">
+        የድጋፍ አማራጮች
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= TEACHING ================= -->
+
+<section id="teaching" class="view">
+
+  <div class="page-title">
+    <h2>📖 Bible Teaching 🕎</h2>
+    <p>የመጽሐፍ ቅዱስ ትምህርቶች</p>
+  </div>
+
+  <div class="filters">
+    <button class="filter active">ሁሉም</button>
+    <button class="filter">Apostolic</button>
+    <button class="filter">Bible Study</button>
+    <button class="filter">Doctrine</button>
+  </div>
+
+  <div class="list">
+
+    <div class="list-card">
+      <div class="list-icon">🕎</div>
+
+      <div class="list-info">
+        <h4>እግዚአብሔር አንድ ነው</h4>
+        <p>One God • Bible Teaching</p>
+      </div>
+
+      <button class="small-btn gold"
+        onclick="saveItem('teaching1','እግዚአብሔር አንድ ነው','📖')">
+        ♡
+      </button>
+    </div>
+
+
+    <div class="list-card">
+      <div class="list-icon">📜</div>
+
+      <div class="list-info">
+        <h4>የኢየሱስ ስም</h4>
+        <p>Jesus Name • Bible Study</p>
+      </div>
+
+      <button class="small-btn"
+        onclick="saveItem('teaching2','የኢየሱስ ስም','📜')">
+        ♡
+      </button>
+    </div>
+
+
+    <div class="list-card">
+      <div class="list-icon">📖</div>
+
+      <div class="list-info">
+        <h4>ቃሉ ሥጋ ሆነ</h4>
+        <p>John 1 • Teaching</p>
+      </div>
+
+      <button class="small-btn"
+        onclick="saveItem('teaching3','ቃሉ ሥጋ ሆነ','📖')">
+        ♡
+      </button>
+    </div>
+
+
+    <div class="list-card">
+      <div class="list-icon">✝️</div>
+
+      <div class="list-info">
+        <h4>እምነትና ድነት</h4>
+        <p>Salvation • Bible Study</p>
+      </div>
+
+      <button class="small-btn"
+        onclick="saveItem('teaching4','እምነትና ድነት','✝️')">
+        ♡
+      </button>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SONGS ================= -->
+
+<section id="songs" class="view">
+
+  <div class="page-title">
+    <h2>🎵 Songs</h2>
+    <p>መዝሙሮችን ያዳምጡና ያከማቹ</p>
+  </div>
+
+  <div class="list">
+
+    <div class="song-card">
+
+      <div class="song-cover">🎵</div>
+
+      <div class="song-info">
+        <h4>ኢየሱስ ነው ጌታ</h4>
+        <span>Apostolic Song</span>
+      </div>
+
+      <button class="play" onclick="playDemo(this)">▶</button>
+
+    </div>
+
+
+    <div class="song-card">
+
+      <div class="song-cover">🕎</div>
+
+      <div class="song-info">
+        <h4>በእምነት እንመላለስ</h4>
+        <span>Christian Song</span>
+      </div>
+
+      <button class="play" onclick="playDemo(this)">▶</button>
+
+    </div>
+
+
+    <div class="song-card">
+
+      <div class="song-cover">🎶</div>
+
+      <div class="song-info">
+        <h4>ምስጋና ለኢየሱስ</h4>
+        <span>Worship Song</span>
+      </div>
+
+      <button class="play" onclick="playDemo(this)">▶</button>
+
+    </div>
+
+  </div>
+
+  <div class="ad-box mt">
+    🎵 የመዝሙር ማስታወቂያ ቦታ
+  </div>
+
+</section>
+
+
+<!-- ================= LIBRARY ================= -->
+
+<section id="library" class="view">
+
+  <div class="page-title">
+    <h2>📚 Library</h2>
+    <p>PDF፣ Word እና ሌሎች የጽሑፍ ምንጮች</p>
+  </div>
+
+  <div class="list">
+
+    <div class="file-card">
+
+      <div class="file-icon">📕</div>
+
+      <div class="file-info">
+        <h4>የመጽሐፍ ቅዱስ ትምህርት</h4>
+        <p>PDF • Digital Book</p>
+      </div>
+
+      <button class="small-btn gold"
+        onclick="downloadDemo('የመጽሐፍ ቅዱስ ትምህርት')">
+        📥
+      </button>
+
+    </div>
+
+
+    <div class="file-card">
+
+      <div class="file-icon">📄</div>
+
+      <div class="file-info">
+        <h4>Apostolic Teaching Notes</h4>
+        <p>Word • Document</p>
+      </div>
+
+      <button class="small-btn gold"
+        onclick="downloadDemo('Apostolic Teaching Notes')">
+        📥
+      </button>
+
+    </div>
+
+
+    <div class="file-card">
+
+      <div class="file-icon">📚</div>
+
+      <div class="file-info">
+        <h4>Christian Study Materials</h4>
+        <p>Digital Library</p>
+      </div>
+
+      <button class="small-btn"
+        onclick="openContent('Christian Study Materials','በኋላ የራስህን PDF እና Word ፋይሎች እዚህ ማስገባት ትችላለህ።')">
+        ክፈት
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= VIDEOS ================= -->
+
+<section id="videos" class="view">
+
+  <div class="page-title">
+    <h2>🎥 Videos</h2>
+    <p>የቪዲዮ ትምህርቶችና ስብከቶች</p>
+  </div>
+
+  <div class="list">
+
+    <div class="video">
+
+      <div class="video-thumb">▶</div>
+
+      <div class="video-body">
+        <h4>🕎 Apostolic Bible Teaching</h4>
+        <p>በኋላ የYouTube ወይም ሌላ video link እዚህ ይገባል።</p>
+
+        <button class="btn btn-dark mt"
+          onclick="openContent('Apostolic Bible Teaching','ይህ የቪዲዮ ማሳያ ነው። በኋላ የራስህን video link እንጨምራለን።')">
+          ▶ ይክፈቱ
+        </button>
+      </div>
+
+    </div>
+
+
+    <div class="video">
+
+      <div class="video-thumb">🎥</div>
+
+      <div class="video-body">
+        <h4>የመጽሐፍ ቅዱስ ጥናት</h4>
+        <p>Christian Bible Study Video</p>
+
+        <button class="btn btn-dark mt"
+          onclick="openContent('የመጽሐፍ ቅዱስ ጥናት','የማሳያ ቪዲዮ ገጽ።')">
+          ▶ ይክፈቱ
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<section id="search" class="view">
+
+  <div class="page-title">
+    <h2>🔎 Search</h2>
+    <p>በApp ውስጥ ይዘት ይፈልጉ</p>
+  </div>
+
+  <div class="search-box">
+
+    <span>🔎</span>
+
+    <input
+      id="searchInput"
+      type="search"
+      placeholder="ምን መፈለግ ይፈልጋሉ?"
+      oninput="globalSearch(this.value)"
+    >
+
+  </div>
+
+  <div id="searchResults">
+
+    <div class="empty">
+      <div>🔎</div>
+      ለመፈለግ ቃል ያስገቡ።
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SAVED ================= -->
+
+<section id="saved" class="view">
+
+  <div class="page-title">
+    <h2>❤️ Saved</h2>
+    <p>ያስቀመጡት ይዘት</p>
+  </div>
+
+  <div id="savedList"></div>
+
+</section>
+
+
+<!-- ================= PREMIUM ================= -->
+
+<section id="premium" class="view">
+
+  <div class="page-title">
+    <h2>⭐ Premium 🕎</h2>
+    <p>ልዩ የዲጂታል ይዘቶች</p>
+  </div>
+
+  <div class="premium">
+
+    <h3>Premium Membership</h3>
+
+    <p>
+      Premium አባልነት በኋላ በእውነተኛ
+      payment system ይገናኛል።
+    </p>
+
+    <ul>
+      <li>✓ Premium Bible Teachings</li>
+      <li>✓ Premium Digital Books</li>
+      <li>✓ Exclusive Songs</li>
+      <li>✓ Exclusive Videos</li>
+      <li>✓ Downloadable Materials</li>
+    </ul>
+
+    <button class="btn btn-gold"
+      onclick="showMessage('Premium','የክፍያ ስርዓቱን በሚቀጥለው የDevelopment ደረጃ እንገነባለን።')">
+      ⭐ Premium ለመሆን
+    </button>
+
+  </div>
+
+  <div class="section mt">
+
+    <div class="card">
+
+      <div class="card-icon">🔒</div>
+
+      <h4>Premium Content</h4>
+
+      <p>
+        የተቆለፉ ይዘቶች በኋላ በPremium
+        አባልነት ብቻ እንዲከፈቱ ይደረጋሉ።
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SUPPORT ================= -->
+
+<section id="support" class="view">
+
+  <div class="page-title">
+    <h2>🤝 Support Us</h2>
+    <p>የአገልግሎቱን ስራ ይደግፉ</p>
+  </div>
+
+  <div class="support">
+
+    <h3>🕎 የድጋፍ ማዕከል</h3>
+
+    <p>
+      ይህ አፕ የመጽሐፍ ቅዱስ ትምህርትን፣
+      መዝሙርን እና የChristian Media ይዘትን
+      ለማስፋት የተዘጋጀ ነው።
+    </p>
+
+    <div class="card mb">
+      <h4>💳 Donation</h4>
+      <p>
+        የባንክ፣ Telebirr ወይም ሌላ የክፍያ
+        መንገድ በኋላ እዚህ ይጨመራል።
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>🤝 Partner With Us</h4>
+      <p>
+        የሚደግፉን ድርጅቶችና ግለሰቦች
+        በኋላ እዚህ ማስተዋወቅ ይቻላል።
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ACCOUNT ================= -->
+
+<section id="account" class="view">
+
+  <div class="page-title">
+    <h2>👤 Account</h2>
+    <p>የእርስዎ መለያ</p>
+  </div>
+
+  <div class="profile">
+
+    <div class="avatar">G</div>
+
+    <div>
+      <h3>Guest User</h3>
+      <p>Free Member</p>
+    </div>
+
+  </div>
+
+
+  <div class="menu">
+
+    <div class="menu-item" onclick="showView('saved')">
+      <div class="menu-icon">❤️</div>
+      <span>Saved Content</span>
+    </div>
+
+    <div class="menu-item" onclick="showView('premium')">
+      <div class="menu-icon">⭐</div>
+      <span>Premium</span>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-icon">📥</div>
+      <span>Downloads</span>
+    </div>
+
+    <div class="menu-item" onclick="showView('support')">
+      <div class="menu-icon">🤝</div>
+      <span>Support</span>
+    </div>
+
+    <div class="menu-item" onclick="showView('admin')">
+      <div class="menu-icon">⚙️</div>
+      <span>Admin Demo</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ADMIN ================= -->
+
+<section id="admin" class="view">
+
+  <div class="page-title">
+    <h2>⚙️ Admin</h2>
+    <p>የይዘት ማስገቢያ መሠረት</p>
+  </div>
+
+  <div class="admin">
+
+    <div class="card mb">
+      <h4>⚠️ Demo Admin</h4>
+      <p>
+        ይህ አሁን በስልክህ ላይ የሚሰራ
+        demo/local admin ነው።
+        እውነተኛ secure admin login በኋላ
+        ከdatabase/backend ጋር እንገነባለን።
+      </p>
+    </div>
+
+
+    <label>Content Type</label>
+
+    <select id="adminType">
+      <option>Teaching</option>
+      <option>Song</option>
+      <option>Library</option>
+      <option>Video</option>
+    </select>
+
+
+    <label>Title</label>
+
+    <input
+      id="adminTitle"
+      type="text"
+      placeholder="የይዘት ርዕስ"
+    >
+
+
+    <label>Description</label>
+
+    <textarea
+      id="adminDescription"
+      placeholder="አጭር መግለጫ..."
+    ></textarea>
+
+
+    <button
+      class="btn btn-dark"
+      onclick="addAdminContent()">
+      ➕ Add Content
+    </button>
+
+  </div>
+
+
+  <div class="section mt">
+
+    <div class="section-head">
+      <h3>Added Content</h3>
+    </div>
+
+    <div id="adminContentList"></div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= BOTTOM NAV ================= -->
+
+<nav class="bottom-nav">
+
+  <div class="nav-inner">
+
+    <button class="nav-btn active"
+      data-view="home"
+      onclick="showView('home')">
+      <span>⌂</span>
+      <span>Home</span>
+    </button>
+
+    <button class="nav-btn"
+      data-view="teaching"
+      onclick="showView('teaching')">
+      <span>📖</span>
+      <span>Teaching</span>
+    </button>
+
+    <button class="nav-btn"
+      data-view="songs"
+      onclick="showView('songs')">
+      <span>🎵</span>
+      <span>Songs</span>
+    </button>
+
+    <button class="nav-btn"
+      data-view="library"
+      onclick="showView('library')">
+      <span>📚</span>
+      <span>Library</span>
+    </button>
+
+    <button class="nav-btn"
+      data-view="account"
+      onclick="showView('account')">
+      <span>👤</span>
+      <span>Account</span>
+    </button>
+
+  </div>
+
+</nav>
+
+
+<!-- ================= MODAL ================= -->
+
+<div id="modal" class="modal">
+
+  <div class="modal-content">
+
+    <div class="modal-top">
+
+      <h3 id="modalTitle">Title</h3>
+
+      <button class="close" onclick="closeModal()">✕</button>
+
+    </div>
+
+    <div id="modalBody"></div>
+
   </div>
 
 </div>
 
-<nav>
-  <div><span>🏠</span>Home</div>
-  <div><span>📖</span>Teaching</div>
-  <div><span>🎵</span>Songs</div>
-  <div><span>📚</span>Library</div>
-  <div><span>👤</span>Account</div>
-</nav>
+
+<script>
+
+/* ================= NAVIGATION ================= */
+
+function showView(viewId){
+
+  document.querySelectorAll(".view").forEach(view=>{
+    view.classList.remove("active");
+  });
+
+  const target=document.getElementById(viewId);
+
+  if(target){
+    target.classList.add("active");
+  }
+
+  document.querySelectorAll(".nav-btn").forEach(btn=>{
+    btn.classList.remove("active");
+
+    if(btn.dataset.view===viewId){
+      btn.classList.add("active");
+    }
+  });
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+  if(viewId==="saved"){
+    renderSaved();
+  }
+
+  if(viewId==="admin"){
+    renderAdminContent();
+  }
+}
+
+
+/* ================= MODAL ================= */
+
+function openContent(title,text){
+
+  document.getElementById("modalTitle").textContent=title;
+
+  document.getElementById("modalBody").innerHTML=`
+    <p style="font-size:14px;line-height:1.9;color:#5f6878;">
+      ${text}
+    </p>
+
+    <div style="margin-top:18px;">
+      <button class="btn btn-dark"
+        onclick="closeModal()">
+        ዝጋ
+      </button>
+    </div>
+  `;
+
+  document.getElementById("modal").classList.add("show");
+}
+
+
+function showMessage(title,text){
+  openContent(title,text);
+}
+
+
+function closeModal(){
+  document.getElementById("modal").classList.remove("show");
+}
+
+
+document.getElementById("modal").addEventListener("click",function(e){
+
+  if(e.target===this){
+    closeModal();
+  }
+
+});
+
+
+/* ================= SAVED ================= */
+
+function getSaved(){
+
+  try{
+    return JSON.parse(
+      localStorage.getItem("apostolicSaved") || "[]"
+    );
+  }catch(e){
+    return [];
+  }
+
+}
+
+
+function saveItem(id,title,icon){
+
+  let saved=getSaved();
+
+  const exists=saved.find(item=>item.id===id);
+
+  if(exists){
+
+    saved=saved.filter(item=>item.id!==id);
+
+    showMessage(
+      "Saved",
+      "ይህ ይዘት ከSaved ዝርዝር ተወግዷል።"
+    );
+
+  }else{
+
+    saved.push({
+      id:id,
+      title:title,
+      icon:icon
+    });
+
+    showMessage(
+      "Saved ❤️",
+      "ይህ ይዘት በSaved ውስጥ ተቀምጧል።"
+    );
+
+  }
+
+  localStorage.setItem(
+    "apostolicSaved",
+    JSON.stringify(saved)
+  );
+
+}
+
+
+function renderSaved(){
+
+  const container=document.getElementById("savedList");
+
+  const saved=getSaved();
+
+  if(saved.length===0){
+
+    container.innerHTML=`
+      <div class="empty">
+        <div>♡</div>
+        እስካሁን ያስቀመጡት ይዘት የለም።
+      </div>
+    `;
+
+    return;
+  }
+
+
+  container.innerHTML="";
+
+  saved.forEach(item=>{
+
+    const div=document.createElement("div");
+
+    div.className="list-card mb";
+
+    div.innerHTML=`
+      <div class="list-icon">${item.icon}</div>
+
+      <div class="list-info">
+        <h4>${escapeHtml(item.title)}</h4>
+        <p>Saved Content</p>
+      </div>
+
+      <button class="small-btn"
+        onclick="removeSaved('${item.id}')">
+        🗑️
+      </button>
+    `;
+
+    container.appendChild(div);
+
+  });
+
+}
+
+
+function removeSaved(id){
+
+  let saved=getSaved().filter(
+    item=>item.id!==id
+  );
+
+  localStorage.setItem(
+    "apostolicSaved",
+    JSON.stringify(saved)
+  );
+
+  renderSaved();
+
+}
+
+
+/* ================= SEARCH ================= */
+
+const searchData=[
+
+  {
+    title:"እግዚአብሔር አንድ ነው",
+    type:"Bible Teaching",
+    icon:"🕎"
+  },
+
+  {
+    title:"የኢየሱስ ስም",
+    type:"Bible Study",
+    icon:"📜"
+  },
+
+  {
+    title:"ቃሉ ሥጋ ሆነ",
+    type:"Teaching",
+    icon:"📖"
+  },
+
+  {
+    title:"ኢየሱስ ነው ጌታ",
+    type:"Song",
+    icon:"🎵"
+  },
+
+  {
+    title:"በእምነት እንመላለስ",
+    type:"Song",
+    icon:"🎶"
+  },
+
+  {
+    title:"Christian Study Materials",
+    type:"Library",
+    icon:"📚"
+  },
+
+  {
+    title:"Apostolic Bible Teaching",
+    type:"Video",
+    icon:"🎥"
+  }
+
+];
+
+
+function globalSearch(value){
+
+  const query=value.trim().toLowerCase();
+
+  const results=document.getElementById("searchResults");
+
+  if(!results){
+    return;
+  }
+
+  if(!query){
+
+    results.innerHTML=`
+      <div class="empty">
+        <div>🔎</div>
+        ለመፈለግ ቃል ያስገቡ።
+      </div>
+    `;
+
+    return;
+  }
+
+
+  const matches=searchData.filter(item=>
+    item.title.toLowerCase().includes(query) ||
+    item.type.toLowerCase().includes(query)
+  );
+
+
+  if(matches.length===0){
+
+    results.innerHTML=`
+      <div class="empty">
+        <div>😔</div>
+        “${escapeHtml(value)}” ምንም ውጤት አልተገኘም።
+      </div>
+    `;
+
+    return;
+  }
+
+
+  results.innerHTML="";
+
+  matches.forEach(item=>{
+
+    const div=document.createElement("div");
+
+    div.className="list-card mb";
+
+    div.innerHTML=`
+
+      <div class="list-icon">
+        ${item.icon}
+      </div>
+
+      <div class="list-info">
+        <h4>${escapeHtml(item.title)}</h4>
+        <p>${escapeHtml(item.type)}</p>
+      </div>
+
+      <button class="small-btn gold"
+        onclick="openContent('${escapeHtml(item.title)}','ይህ የSearch ውጤት ማሳያ ነው።')">
+        ክፈት
+      </button>
+
+    `;
+
+    results.appendChild(div);
+
+  });
+
+}
+
+
+/* ================= SONG DEMO ================= */
+
+function playDemo(button){
+
+  const playing=
+    button.textContent==="❚❚";
+
+  document.querySelectorAll(".play").forEach(btn=>{
+    btn.textContent="▶";
+  });
+
+  if(!playing){
+
+    button.textContent="❚❚";
+
+    showMessage(
+      "🎵 Audio Player",
+      "ይህ አሁን የAudio player ማሳያ ነው። በኋላ እውነተኛ MP3/Audio files እንገናኛለን።"
+    );
+
+  }
+
+}
+
+
+/* ================= DOWNLOAD DEMO ================= */
+
+function downloadDemo(title){
+
+  showMessage(
+    "📥 Download",
+    `"${title}" ፋይል አሁን demo ነው። እውነተኛ PDF/Word ፋይል ስንጨምር የDownload ቁልፉ በቀጥታ ይሰራል።`
+  );
+
+}
+
+
+/* ================= ADMIN ================= */
+
+function getAdminContent(){
+
+  try{
+
+    return JSON.parse(
+      localStorage.getItem("apostolicAdminContent") || "[]"
+    );
+
+  }catch(e){
+
+    return [];
+
+  }
+
+}
+
+
+function addAdminContent(){
+
+  const type=
+    document.getElementById("adminType").value;
+
+  const title=
+    document.getElementById("adminTitle").value.trim();
+
+  const description=
+    document.getElementById("adminDescription").value.trim();
+
+
+  if(!title){
+
+    showMessage(
+      "⚠️ Missing Title",
+      "እባክህ የይዘቱን ርዕስ አስገባ።"
+    );
+
+    return;
+  }
+
+
+  let content=getAdminContent();
+
+  content.push({
+
+    id:Date.now(),
+
+    type:type,
+
+    title:title,
+
+    description:
+      description || "No description"
+
+  });
+
+
+  localStorage.setItem(
+    "apostolicAdminContent",
+    JSON.stringify(content)
+  );
+
+
+  document.getElementById("adminTitle").value="";
+  document.getElementById("adminDescription").value="";
+
+
+  renderAdminContent();
+
+
+  showMessage(
+    "✅ Added",
+    "ይዘቱ በDemo Admin ውስጥ ተጨምሯል።"
+  );
+
+}
+
+
+function renderAdminContent(){
+
+  const container=
+    document.getElementById("adminContentList");
+
+  if(!container){
+    return;
+  }
+
+
+  const content=getAdminContent();
+
+
+  if(content.length===0){
+
+    container.innerHTML=`
+      <div class="empty">
+        <div>📭</div>
+        እስካሁን የተጨመረ ይዘት የለም።
+      </div>
+    `;
+
+    return;
+
+  }
+
+
+  container.innerHTML="";
+
+
+  content.slice().reverse().forEach(item=>{
+
+    const div=document.createElement("div");
+
+    div.className="card mb";
+
+    div.innerHTML=`
+
+      <div class="card-icon">
+        ${getTypeIcon(item.type)}
+      </div>
+
+      <h4>
+        ${escapeHtml(item.title)}
+      </h4>
+
+      <p>
+        ${escapeHtml(item.description)}
+      </p>
+
+      <p style="margin-top:8px;font-size:10px;">
+        ${escapeHtml(item.type)}
+      </p>
+
+    `;
+
+    container.appendChild(div);
+
+  });
+
+}
+
+
+function getTypeIcon(type){
+
+  if(type==="Teaching") return "📖";
+
+  if(type==="Song") return "🎵";
+
+  if(type==="Library") return "📚";
+
+  if(type==="Video") return "🎥";
+
+  return "📄";
+
+}
+
+
+/* ================= SECURITY HELPER ================= */
+
+function escapeHtml(value){
+
+  return String(value)
+
+    .replace(/&/g,"&amp;")
+
+    .replace(/</g,"&lt;")
+
+    .replace(/>/g,"&gt;")
+
+    .replace(/"/g,"&quot;")
+
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* ================= START ================= */
+
+renderSaved();
+
+renderAdminContent();
+
+</script>
 
 </body>
 </html>
