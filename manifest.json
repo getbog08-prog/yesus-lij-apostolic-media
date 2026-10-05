@@ -1,0 +1,30 @@
+{
+  "name": "የኢየሱስ ልጆች Apostolic Media App",
+  "short_name": "Apostolic Media",
+  "description": "Apostolic Christian Bible teaching, songs, library, videos and Christian media.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#071a35",
+  "theme_color": "#071a35",
+  "orientation": "portrait",
+  "lang": "am",
+  "dir": "ltr",
+  "categories": [
+    "education",
+    "books",
+    "music",
+    "religion"
+  ],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
