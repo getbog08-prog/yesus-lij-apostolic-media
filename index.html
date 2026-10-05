@@ -32,7 +32,6 @@ body{
 }
 
 button,input,textarea,select{font:inherit}
-
 button{cursor:pointer;border:0}
 
 .header{
@@ -298,6 +297,7 @@ button{cursor:pointer;border:0}
 .list-info p{
   font-size:11px;
   color:var(--muted);
+  line-height:1.5;
 }
 
 .small-btn{
@@ -311,6 +311,11 @@ button{cursor:pointer;border:0}
 .small-btn.gold{
   background:var(--gold);
   color:var(--navy);
+}
+
+.small-btn.red{
+  background:#fbe7e7;
+  color:#a51f1f;
 }
 
 .page-title{
@@ -400,14 +405,30 @@ button{cursor:pointer;border:0}
   flex-shrink:0;
 }
 
-.file-info{flex:1}
+.file-info{flex:1;min-width:0}
 
-.file-info h4{font-size:13px}
+.file-info h4{
+  font-size:13px;
+  word-break:break-word;
+}
 
 .file-info p{
   font-size:11px;
   color:var(--muted);
   margin-top:4px;
+  word-break:break-word;
+}
+
+.file-actions{
+  display:flex;
+  gap:5px;
+  flex-shrink:0;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.library-search{
+  margin-bottom:15px;
 }
 
 .video{
@@ -550,6 +571,7 @@ button{cursor:pointer;border:0}
   gap:13px;
   border-bottom:1px solid #edf0f5;
   font-size:14px;
+  cursor:pointer;
 }
 
 .menu-icon{
@@ -560,6 +582,63 @@ button{cursor:pointer;border:0}
   display:flex;
   align-items:center;
   justify-content:center;
+}
+
+.contact-card{
+  margin-top:15px;
+  background:white;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+
+.contact-card h3{
+  margin-bottom:12px;
+}
+
+.contact-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 0;
+  border-bottom:1px solid #edf0f5;
+}
+
+.contact-row:last-child{
+  border-bottom:0;
+}
+
+.contact-icon{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  background:#eef2f8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.contact-info{
+  flex:1;
+}
+
+.contact-info strong{
+  display:block;
+  font-size:13px;
+}
+
+.contact-info span{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:3px;
+  word-break:break-word;
+}
+
+.contact-link{
+  text-decoration:none;
+  color:var(--navy);
+  font-weight:bold;
 }
 
 .admin{
@@ -741,6 +820,7 @@ button{cursor:pointer;border:0}
 
     <div class="brand">
       <div class="logo">🕎</div>
+
       <div>
         <h1>የኢየሱስ ልጆች</h1>
         <span>Apostolic Media App</span>
@@ -763,12 +843,15 @@ button{cursor:pointer;border:0}
 
   <div class="search-box">
     <span>🔎</span>
-    <input type="search"
+
+    <input
+      type="search"
       placeholder="ትምህርት፣ መዝሙር፣ መጽሐፍ ፈልግ..."
       oninput="globalSearch(this.value)">
   </div>
 
   <div class="hero">
+
     <small>🕎 APOSTOLIC MEDIA</small>
 
     <h2>
@@ -783,14 +866,19 @@ button{cursor:pointer;border:0}
     </p>
 
     <div class="hero-buttons">
-      <button class="btn btn-gold" onclick="showView('teaching')">
+
+      <button class="btn btn-gold"
+        onclick="showView('teaching')">
         📖 ትምህርት ጀምር
       </button>
 
-      <button class="btn btn-light" onclick="showView('library')">
+      <button class="btn btn-light"
+        onclick="showView('library')">
         📚 Library
       </button>
+
     </div>
+
   </div>
 
   <div class="section">
@@ -838,9 +926,11 @@ button{cursor:pointer;border:0}
       </div>
 
     </div>
+
   </div>
 
   <div class="section">
+
     <div class="section-head">
       <h3>🕎 ተመራጭ ትምህርት</h3>
       <button onclick="showView('teaching')">ሁሉንም</button>
@@ -849,6 +939,7 @@ button{cursor:pointer;border:0}
     <div class="list">
 
       <div class="list-card">
+
         <div class="list-icon">🕎</div>
 
         <div class="list-info">
@@ -856,14 +947,19 @@ button{cursor:pointer;border:0}
           <p>One God • Bible Teaching</p>
         </div>
 
-        <button class="small-btn gold"
-          onclick="openContent('እግዚአብሔር አንድ ነው',
-          'ይህ የማሳያ ቦታ ነው። ሙሉ የትምህርት ጽሑፍህን በኋላ እዚህ ማስገባት ትችላለህ።')">
+        <button
+          class="small-btn gold"
+          onclick="openContent(
+            'እግዚአብሔር አንድ ነው',
+            'ይህ የማሳያ ቦታ ነው። ሙሉ የትምህርት ጽሑፍህን በኋላ እዚህ ማስገባት ትችላለህ።'
+          )">
           ክፈት
         </button>
+
       </div>
 
       <div class="list-card">
+
         <div class="list-icon">📜</div>
 
         <div class="list-info">
@@ -871,18 +967,25 @@ button{cursor:pointer;border:0}
           <p>Jesus Name • Bible Study</p>
         </div>
 
-        <button class="small-btn"
-          onclick="openContent('የኢየሱስ ስም',
-          'የማሳያ ትምህርት ነው።')">
+        <button
+          class="small-btn"
+          onclick="openContent(
+            'የኢየሱስ ስም',
+            'የማሳያ ትምህርት ነው።'
+          )">
           ክፈት
         </button>
+
       </div>
 
     </div>
+
   </div>
 
   <div class="section">
+
     <div class="premium">
+
       <h3>⭐ Premium Content</h3>
 
       <p>
@@ -896,20 +999,34 @@ button{cursor:pointer;border:0}
         <li>✓ የተለየ የዲጂታል ይዘት</li>
       </ul>
 
-      <button class="btn btn-gold" onclick="showView('premium')">
+      <button
+        class="btn btn-gold"
+        onclick="showView('premium')">
         Premium ይመልከቱ
       </button>
+
     </div>
+
   </div>
 
   <div class="section">
+
     <div class="ad-box">
+
       <strong>ADVERTISEMENT</strong>
+
       <br><br>
+
       የማስታወቂያ ቦታ
+
       <br>
-      <small>ለወደፊት ከAds system ጋር ይገናኛል።</small>
+
+      <small>
+        ለወደፊት ከAds system ጋር ይገናኛል።
+      </small>
+
     </div>
+
   </div>
 
 </section>
@@ -925,15 +1042,18 @@ button{cursor:pointer;border:0}
   </div>
 
   <div class="filters">
+
     <button class="filter active">ሁሉም</button>
     <button class="filter">Apostolic</button>
     <button class="filter">Bible Study</button>
     <button class="filter">Doctrine</button>
+
   </div>
 
-  <div id="teachingList" class="list">
+  <div class="list">
 
     <div class="list-card">
+
       <div class="list-icon">🕎</div>
 
       <div class="list-info">
@@ -941,13 +1061,20 @@ button{cursor:pointer;border:0}
         <p>One God • Bible Teaching</p>
       </div>
 
-      <button class="small-btn gold"
-        onclick="saveItem('teaching1','እግዚአብሔር አንድ ነው','📖')">
+      <button
+        class="small-btn gold"
+        onclick="saveItem(
+          'teaching1',
+          'እግዚአብሔር አንድ ነው',
+          '📖'
+        )">
         ♡
       </button>
+
     </div>
 
     <div class="list-card">
+
       <div class="list-icon">📜</div>
 
       <div class="list-info">
@@ -955,13 +1082,20 @@ button{cursor:pointer;border:0}
         <p>Jesus Name • Bible Study</p>
       </div>
 
-      <button class="small-btn"
-        onclick="saveItem('teaching2','የኢየሱስ ስም','📜')">
+      <button
+        class="small-btn"
+        onclick="saveItem(
+          'teaching2',
+          'የኢየሱስ ስም',
+          '📜'
+        )">
         ♡
       </button>
+
     </div>
 
     <div class="list-card">
+
       <div class="list-icon">📖</div>
 
       <div class="list-info">
@@ -969,13 +1103,20 @@ button{cursor:pointer;border:0}
         <p>John 1 • Teaching</p>
       </div>
 
-      <button class="small-btn"
-        onclick="saveItem('teaching3','ቃሉ ሥጋ ሆነ','📖')">
+      <button
+        class="small-btn"
+        onclick="saveItem(
+          'teaching3',
+          'ቃሉ ሥጋ ሆነ',
+          '📖'
+        )">
         ♡
       </button>
+
     </div>
 
     <div class="list-card">
+
       <div class="list-icon">✝️</div>
 
       <div class="list-info">
@@ -983,10 +1124,16 @@ button{cursor:pointer;border:0}
         <p>Salvation • Bible Study</p>
       </div>
 
-      <button class="small-btn"
-        onclick="saveItem('teaching4','እምነትና ድነት','✝️')">
+      <button
+        class="small-btn"
+        onclick="saveItem(
+          'teaching4',
+          'እምነትና ድነት',
+          '✝️'
+        )">
         ♡
       </button>
+
     </div>
 
   </div>
@@ -1006,6 +1153,7 @@ button{cursor:pointer;border:0}
   <div class="list">
 
     <div class="song-card">
+
       <div class="song-cover">🎵</div>
 
       <div class="song-info">
@@ -1014,9 +1162,11 @@ button{cursor:pointer;border:0}
       </div>
 
       <button class="play" onclick="playDemo(this)">▶</button>
+
     </div>
 
     <div class="song-card">
+
       <div class="song-cover">🕎</div>
 
       <div class="song-info">
@@ -1025,9 +1175,11 @@ button{cursor:pointer;border:0}
       </div>
 
       <button class="play" onclick="playDemo(this)">▶</button>
+
     </div>
 
     <div class="song-card">
+
       <div class="song-cover">🎶</div>
 
       <div class="song-info">
@@ -1036,6 +1188,7 @@ button{cursor:pointer;border:0}
       </div>
 
       <button class="play" onclick="playDemo(this)">▶</button>
+
     </div>
 
   </div>
@@ -1048,12 +1201,29 @@ button{cursor:pointer;border:0}
 <section id="library" class="view">
 
   <div class="page-title">
+
     <h2>📚 Library</h2>
-    <p>PDF፣ Word እና የጽሑፍ ምንጮች</p>
+
+    <p>
+      PDF፣ Word እና የጽሑፍ ምንጮች
+    </p>
+
   </div>
 
   <div class="ad-box mb">
     📚 የክርስቲያን ዲጂታል ቤተ-መጻሕፍት
+  </div>
+
+  <div class="search-box library-search">
+
+    <span>🔎</span>
+
+    <input
+      id="librarySearch"
+      type="search"
+      placeholder="በLibrary ውስጥ ፈልግ..."
+      oninput="filterLibrary(this.value)">
+
   </div>
 
   <div id="libraryList" class="list"></div>
@@ -1073,12 +1243,21 @@ button{cursor:pointer;border:0}
   <div class="list">
 
     <div class="video">
+
       <div class="video-thumb">▶</div>
 
       <div class="video-body">
+
         <h4>🕎 Apostolic Bible Teaching</h4>
-        <p>የቪዲዮ ትምህርት ቦታ። በኋላ YouTube ወይም ሌላ የቪዲዮ ማጫወቻ እንገናኛለን።</p>
+
+        <p>
+          የቪዲዮ ትምህርት ቦታ።
+          በኋላ YouTube ወይም ሌላ የቪዲዮ
+          ማጫወቻ እንገናኛለን።
+        </p>
+
       </div>
+
     </div>
 
   </div>
@@ -1101,7 +1280,8 @@ button{cursor:pointer;border:0}
 
     <p>
       Premium አባላት ልዩ ትምህርቶችን፣
-      ዲጂታል መጻሕፍትን እና ሌሎች ይዘቶችን ማግኘት ይችላሉ።
+      ዲጂታል መጻሕፍትን እና ሌሎች ይዘቶችን
+      ማግኘት ይችላሉ።
     </p>
 
     <ul>
@@ -1111,7 +1291,8 @@ button{cursor:pointer;border:0}
       <li>✓ Digital Downloads</li>
     </ul>
 
-    <button class="btn btn-gold"
+    <button
+      class="btn btn-gold"
       onclick="alert('Premium payment system will be connected later.')">
       Premium ይጀምሩ
     </button>
@@ -1136,10 +1317,12 @@ button{cursor:pointer;border:0}
 
     <p>
       ይህን የApostolic Media አገልግሎት
-      ለማስቀጠል የምታደርጉት ድጋፍ እጅግ ጠቃሚ ነው።
+      ለማስቀጠል የምታደርጉት ድጋፍ
+      እጅግ ጠቃሚ ነው።
     </p>
 
-    <button class="btn btn-dark"
+    <button
+      class="btn btn-dark"
       onclick="alert('Donation options will be connected later.')">
       የድጋፍ አማራጮች
     </button>
@@ -1159,11 +1342,15 @@ button{cursor:pointer;border:0}
   </div>
 
   <div class="search-box">
+
     <span>🔎</span>
-    <input id="searchInput"
+
+    <input
+      id="searchInput"
       type="search"
       placeholder="ፈልግ..."
       oninput="globalSearch(this.value)">
+
   </div>
 
   <div id="searchResults"></div>
@@ -1195,12 +1382,14 @@ button{cursor:pointer;border:0}
   </div>
 
   <div class="profile">
+
     <div class="avatar">🕎</div>
 
     <div>
       <h3>የኢየሱስ ልጆች</h3>
       <p>Apostolic Media Member</p>
     </div>
+
   </div>
 
   <div class="menu">
@@ -1227,6 +1416,79 @@ button{cursor:pointer;border:0}
 
   </div>
 
+
+  <!-- DEVELOPER -->
+
+  <div class="contact-card">
+
+    <h3>👨‍💻 Developer</h3>
+
+    <div class="contact-row">
+
+      <div class="contact-icon">👤</div>
+
+      <div class="contact-info">
+
+        <strong>Developer</strong>
+
+        <span>
+          Getu Bogale
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="contact-row">
+
+      <div class="contact-icon">✈️</div>
+
+      <div class="contact-info">
+
+        <strong>Telegram</strong>
+
+        <span>
+          @getubogale2
+        </span>
+
+      </div>
+
+      <a
+        class="contact-link"
+        href="https://t.me/getubogale2"
+        target="_blank"
+        rel="noopener">
+        Open
+      </a>
+
+    </div>
+
+
+    <div class="contact-row">
+
+      <div class="contact-icon">📞</div>
+
+      <div class="contact-info">
+
+        <strong>Phone</strong>
+
+        <span>
+          +251934197300
+        </span>
+
+      </div>
+
+      <a
+        class="contact-link"
+        href="tel:+251934197300">
+        Call
+      </a>
+
+    </div>
+
+  </div>
+
 </section>
 
 
@@ -1235,46 +1497,98 @@ button{cursor:pointer;border:0}
 <section id="admin" class="view">
 
   <div class="page-title">
+
     <h2>⚙️ Admin</h2>
-    <p>የApp ይዘት ማስገቢያ</p>
+
+    <p>
+      የApp ይዘት ማስገቢያ
+    </p>
+
   </div>
+
 
   <div class="admin">
 
     <h3>📚 Add Library Material</h3>
 
     <p class="admin-note">
+
       PDF ወይም Word ፋይል ከስልክህ ላይ ምረጥ።
-      ይህ የመጀመሪያው browser prototype ነው።
-      ቋሚ የonline storage በቀጣይ እንገነባለን።
+      ርዕስ፣ ምድብ እና መግለጫ ጨምር።
+
+      <br><br>
+
+      ይህ አሁን browser prototype ነው።
+      ቋሚ online storage በቀጣይ እንገነባለን።
+
     </p>
 
-    <label>የይዘቱ ርዕስ</label>
 
-    <input id="materialTitle"
+    <label>
+      የይዘቱ ርዕስ
+    </label>
+
+    <input
+      id="materialTitle"
       type="text"
       placeholder="ለምሳሌ፦ እግዚአብሔር አንድ ነው">
 
-    <label>ምድብ</label>
+
+    <label>
+      ምድብ
+    </label>
 
     <select id="materialCategory">
-      <option value="Bible Teaching">Bible Teaching</option>
-      <option value="Apostolic">Apostolic</option>
-      <option value="Bible Study">Bible Study</option>
-      <option value="Book">Book</option>
-      <option value="Premium">Premium</option>
+
+      <option value="Bible Teaching">
+        Bible Teaching
+      </option>
+
+      <option value="Apostolic">
+        Apostolic
+      </option>
+
+      <option value="Bible Study">
+        Bible Study
+      </option>
+
+      <option value="Book">
+        Book
+      </option>
+
+      <option value="Sermon">
+        Sermon
+      </option>
+
+      <option value="Premium">
+        Premium
+      </option>
+
+      <option value="Other">
+        Other
+      </option>
+
     </select>
 
-    <label>መግለጫ</label>
 
-    <textarea id="materialDescription"
+    <label>
+      መግለጫ
+    </label>
+
+    <textarea
+      id="materialDescription"
       placeholder="ስለዚህ ይዘት አጭር መግለጫ..."></textarea>
 
-    <label>ፋይል</label>
+
+    <label>
+      ፋይል
+    </label>
 
     <div class="upload-area">
 
-      <strong>📤 PDF / Word Upload</strong>
+      <strong>
+        📤 PDF / Word Upload
+      </strong>
 
       <small>
         .pdf, .doc, .docx ፋይሎች ብቻ
@@ -1282,31 +1596,63 @@ button{cursor:pointer;border:0}
 
       <br><br>
 
-      <input id="materialFile"
+      <input
+        id="materialFile"
         type="file"
         accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
 
     </div>
 
-    <button class="btn btn-gold"
+
+    <button
+      class="btn btn-gold"
       onclick="addMaterial()">
       ➕ ወደ Library ጨምር
     </button>
 
   </div>
 
+
   <div class="admin mt">
 
-    <h3>⚠️ Prototype Information</h3>
+    <h3>
+      📦 Library Management
+    </h3>
 
     <p class="admin-note">
-      የአሁኑ የUpload ስርዓት ፋይሉን በዚህ browser
-      ውስጥ ለማሳየት የሚረዳ prototype ነው።
-      ስልኩን ከቀየርክ ወይም browser data ካጠፋህ
-      ይዘቱ ሊጠፋ ይችላል።
+
+      ከታች የጨመርካቸውን የLibrary ፋይሎች
+      ታያለህ። እያንዳንዱን መክፈት፣
+      Download ማድረግ ወይም Delete ማድረግ ትችላለህ።
+
     </p>
 
-    <button class="btn btn-danger"
+    <div id="adminMaterials"></div>
+
+  </div>
+
+
+  <div class="admin mt">
+
+    <h3>
+      ⚠️ Prototype Information
+    </h3>
+
+    <p class="admin-note">
+
+      የአሁኑ ስርዓት ፋይሎችን በዚህ browser
+      ውስጥ በlocal storage ለማስቀመጥ
+      የሚያገለግል prototype ነው።
+
+      <br><br>
+
+      በኋላ ወደ permanent online storage
+      እና secure admin system እንገናኛለን።
+
+    </p>
+
+    <button
+      class="btn btn-danger"
       onclick="clearMaterials()">
       🗑️ Local Materials አጥፋ
     </button>
@@ -1326,14 +1672,22 @@ button{cursor:pointer;border:0}
 
     <div class="modal-top">
 
-      <h3 id="modalTitle">Content</h3>
+      <h3 id="modalTitle">
+        Content
+      </h3>
 
-      <button class="close"
-        onclick="closeModal()">✕</button>
+      <button
+        class="close"
+        onclick="closeModal()">
+        ✕
+      </button>
 
     </div>
 
-    <div id="modalBody" class="content-text"></div>
+    <div
+      id="modalBody"
+      class="content-text">
+    </div>
 
   </div>
 
@@ -1346,34 +1700,53 @@ button{cursor:pointer;border:0}
 
   <div class="nav-inner">
 
-    <button class="nav-btn active"
+    <button
+      class="nav-btn active"
       onclick="showView('home',this)">
+
       <span>🏠</span>
       <span>Home</span>
+
     </button>
 
-    <button class="nav-btn"
+
+    <button
+      class="nav-btn"
       onclick="showView('teaching',this)">
+
       <span>📖</span>
       <span>Teaching</span>
+
     </button>
 
-    <button class="nav-btn"
+
+    <button
+      class="nav-btn"
       onclick="showView('songs',this)">
+
       <span>🎵</span>
       <span>Songs</span>
+
     </button>
 
-    <button class="nav-btn"
+
+    <button
+      class="nav-btn"
       onclick="showView('library',this)">
+
       <span>📚</span>
       <span>Library</span>
+
     </button>
 
-    <button class="nav-btn"
+
+    <button
+      class="nav-btn"
       onclick="showView('account',this)">
+
       <span>👤</span>
       <span>Account</span>
+
     </button>
 
   </div>
@@ -1383,65 +1756,140 @@ button{cursor:pointer;border:0}
 
 <script>
 
+/* ================================
+   APP DATA
+================================ */
+
 let materials =
-  JSON.parse(localStorage.getItem("apostolicMaterials") || "[]");
+  JSON.parse(
+    localStorage.getItem("apostolicMaterials") || "[]"
+  );
 
 let saved =
-  JSON.parse(localStorage.getItem("apostolicSaved") || "[]");
+  JSON.parse(
+    localStorage.getItem("apostolicSaved") || "[]"
+  );
 
+
+/* ================================
+   NAVIGATION
+================================ */
 
 function showView(id,btn){
 
-  document.querySelectorAll(".view")
-    .forEach(v=>v.classList.remove("active"));
+  document
+    .querySelectorAll(".view")
+    .forEach(v=>{
+      v.classList.remove("active");
+    });
 
-  const view=document.getElementById(id);
+
+  const view =
+    document.getElementById(id);
+
 
   if(view){
     view.classList.add("active");
   }
 
-  document.querySelectorAll(".nav-btn")
-    .forEach(n=>n.classList.remove("active"));
+
+  document
+    .querySelectorAll(".nav-btn")
+    .forEach(n=>{
+      n.classList.remove("active");
+    });
+
 
   if(btn){
     btn.classList.add("active");
   }
 
+
   if(id==="library"){
     renderLibrary();
   }
+
 
   if(id==="saved"){
     renderSaved();
   }
 
-  if(id==="search"){
-    setTimeout(()=>{
-      const input=document.getElementById("searchInput");
-      if(input) input.focus();
-    },100);
+
+  if(id==="admin"){
+    renderAdminMaterials();
   }
 
-  window.scrollTo({top:0,behavior:"smooth"});
+
+  if(id==="search"){
+
+    setTimeout(()=>{
+
+      const input =
+        document.getElementById("searchInput");
+
+      if(input){
+        input.focus();
+      }
+
+    },100);
+
+  }
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
 }
 
 
+/* ================================
+   MODAL
+================================ */
+
 function openContent(title,text){
 
-  document.getElementById("modalTitle").textContent=title;
+  document
+    .getElementById("modalTitle")
+    .textContent=title;
 
-  document.getElementById("modalBody").textContent=text;
 
-  document.getElementById("modal").classList.add("show");
+  document
+    .getElementById("modalBody")
+    .textContent=text;
+
+
+  document
+    .getElementById("modal")
+    .classList.add("show");
+
 }
 
 
 function closeModal(){
 
-  document.getElementById("modal").classList.remove("show");
+  document
+    .getElementById("modal")
+    .classList.remove("show");
+
 }
 
+
+document
+  .getElementById("modal")
+  .addEventListener("click",function(e){
+
+    if(e.target===this){
+      closeModal();
+    }
+
+  });
+
+
+/* ================================
+   SONG DEMO
+================================ */
 
 function playDemo(button){
 
@@ -1449,21 +1897,36 @@ function playDemo(button){
 
   button.textContent="⏸";
 
+
   setTimeout(()=>{
+
     button.textContent=old;
+
   },1200);
 
-  alert("🎵 Demo player\n\nበቀጣይ እውነተኛ MP3 player እንገናኛለን።");
+
+  alert(
+    "🎵 Demo player\n\n"+
+    "በቀጣይ እውነተኛ MP3 player እንገናኛለን።"
+  );
+
 }
 
 
+/* ================================
+   SAVED
+================================ */
+
 function saveItem(id,title,icon){
 
-  const exists=saved.find(x=>x.id===id);
+  const exists =
+    saved.find(x=>x.id===id);
+
 
   if(exists){
 
-    saved=saved.filter(x=>x.id!==id);
+    saved =
+      saved.filter(x=>x.id!==id);
 
     alert("ከSaved ተወግዷል።");
 
@@ -1476,172 +1939,364 @@ function saveItem(id,title,icon){
     });
 
     alert("❤️ Saved ተደርጓል።");
+
   }
+
 
   localStorage.setItem(
     "apostolicSaved",
     JSON.stringify(saved)
   );
 
+
   renderSaved();
+
 }
 
 
 function renderSaved(){
 
-  const box=document.getElementById("savedList");
+  const box =
+    document.getElementById("savedList");
+
 
   if(!box)return;
+
 
   if(saved.length===0){
 
     box.innerHTML=`
+
       <div class="empty">
+
         <div>❤️</div>
-        <p>እስካሁን የተቀመጠ ይዘት የለም።</p>
+
+        <p>
+          እስካሁን የተቀመጠ ይዘት የለም።
+        </p>
+
       </div>
+
     `;
 
     return;
+
   }
 
-  box.innerHTML=saved.map(item=>`
+
+  box.innerHTML = saved.map(item=>`
 
     <div class="list-card mb">
 
-      <div class="list-icon">${item.icon}</div>
-
-      <div class="list-info">
-        <h4>${escapeHtml(item.title)}</h4>
-        <p>Saved Content</p>
+      <div class="list-icon">
+        ${escapeHtml(item.icon)}
       </div>
 
-      <button class="small-btn"
-        onclick="saveItem('${item.id}','${escapeAttr(item.title)}','${item.icon}')">
+      <div class="list-info">
+
+        <h4>
+          ${escapeHtml(item.title)}
+        </h4>
+
+        <p>
+          Saved Content
+        </p>
+
+      </div>
+
+      <button
+        class="small-btn"
+        onclick="removeSaved('${escapeAttr(item.id)}')">
         ✕
       </button>
 
     </div>
 
   `).join("");
+
 }
 
 
+function removeSaved(id){
+
+  saved =
+    saved.filter(x=>x.id!==id);
+
+
+  localStorage.setItem(
+    "apostolicSaved",
+    JSON.stringify(saved)
+  );
+
+
+  renderSaved();
+
+}
+
+
+/* ================================
+   ADD MATERIAL
+================================ */
+
 function addMaterial(){
 
-  const title=document
-    .getElementById("materialTitle")
-    .value.trim();
+  const title =
+    document
+      .getElementById("materialTitle")
+      .value
+      .trim();
 
-  const category=document
-    .getElementById("materialCategory")
-    .value;
 
-  const description=document
-    .getElementById("materialDescription")
-    .value.trim();
+  const category =
+    document
+      .getElementById("materialCategory")
+      .value;
 
-  const fileInput=document
-    .getElementById("materialFile");
 
-  const file=fileInput.files[0];
+  const description =
+    document
+      .getElementById("materialDescription")
+      .value
+      .trim();
+
+
+  const fileInput =
+    document.getElementById("materialFile");
+
+
+  const file =
+    fileInput.files[0];
+
 
   if(!title){
 
-    alert("እባክህ የይዘቱን ርዕስ አስገባ።");
+    alert(
+      "እባክህ የይዘቱን ርዕስ አስገባ።"
+    );
 
     return;
+
   }
+
 
   if(!file){
 
-    alert("እባክህ PDF ወይም Word ፋይል ምረጥ።");
+    alert(
+      "እባክህ PDF ወይም Word ፋይል ምረጥ።"
+    );
 
     return;
+
   }
 
-  const name=file.name.toLowerCase();
 
-  const valid=
+  const name =
+    file.name.toLowerCase();
+
+
+  const valid =
     name.endsWith(".pdf") ||
     name.endsWith(".doc") ||
     name.endsWith(".docx");
 
+
   if(!valid){
 
-    alert("PDF, DOC ወይም DOCX ፋይል ብቻ ይፈቀዳል።");
+    alert(
+      "PDF, DOC ወይም DOCX ፋይል ብቻ ይፈቀዳል።"
+    );
 
     return;
+
   }
 
+
   /*
-    Browser prototype:
-    The file is converted to a temporary local URL.
+    Convert file to a Data URL.
+
+    This makes the prototype more reliable than
+    storing a temporary blob URL.
   */
 
-  const url=URL.createObjectURL(file);
+  const reader =
+    new FileReader();
 
-  const material={
-    id:"material_"+Date.now(),
-    title:title,
-    category:category,
-    description:description,
-    filename:file.name,
-    type:getFileType(file.name),
-    url:url,
-    size:file.size,
-    created:new Date().toLocaleDateString()
+
+  reader.onload=function(){
+
+    const material={
+
+      id:
+        "material_"+Date.now(),
+
+      title:
+        title,
+
+      category:
+        category,
+
+      description:
+        description,
+
+      filename:
+        file.name,
+
+      type:
+        getFileType(file.name),
+
+      data:
+        reader.result,
+
+      size:
+        file.size,
+
+      created:
+        new Date().toLocaleDateString()
+
+    };
+
+
+    materials.push(material);
+
+
+    try{
+
+      localStorage.setItem(
+        "apostolicMaterials",
+        JSON.stringify(materials)
+      );
+
+    }catch(error){
+
+      materials =
+        materials.filter(
+          x=>x.id!==material.id
+        );
+
+
+      alert(
+        "⚠️ ይህ ፋይል በbrowser storage ላይ ለማስቀመጥ በጣም ትልቅ ነው።\n\n"+
+        "በቀጣይ permanent online storage እንገነባለን።"
+      );
+
+      return;
+
+    }
+
+
+    renderLibrary();
+    renderAdminMaterials();
+
+
+    document
+      .getElementById("materialTitle")
+      .value="";
+
+
+    document
+      .getElementById("materialDescription")
+      .value="";
+
+
+    document
+      .getElementById("materialFile")
+      .value="";
+
+
+    alert(
+      "✅ ይዘቱ በLibrary ተጨምሯል።"
+    );
+
+
+    showView("library");
+
   };
 
-  materials.push(material);
 
-  /*
-    We intentionally don't store the Blob URL itself
-    as permanent online storage.
-  */
+  reader.onerror=function(){
 
-  sessionStorage.setItem(
-    "currentMaterials",
-    JSON.stringify(materials.map(x=>({
-      ...x,
-      url:x.url
-    })))
-  );
+    alert(
+      "❌ ፋይሉን ማንበብ አልተቻለም።"
+    );
 
-  renderLibrary();
+  };
 
-  document.getElementById("materialTitle").value="";
-  document.getElementById("materialDescription").value="";
-  document.getElementById("materialFile").value="";
 
-  alert(
-    "✅ ይዘቱ ወደ Library ተጨምሯል።\n\n"+
-    "ማስታወሻ፦ ይህ አሁን browser prototype ነው።"
-  );
+  reader.readAsDataURL(file);
 
-  showView("library");
 }
 
+
+/* ================================
+   FILE TYPE
+================================ */
 
 function getFileType(filename){
 
-  const n=filename.toLowerCase();
+  const n =
+    filename.toLowerCase();
 
-  if(n.endsWith(".pdf")) return "PDF";
 
-  if(n.endsWith(".docx")) return "DOCX";
+  if(n.endsWith(".pdf")){
+    return "PDF";
+  }
 
-  if(n.endsWith(".doc")) return "DOC";
+
+  if(n.endsWith(".docx")){
+    return "DOCX";
+  }
+
+
+  if(n.endsWith(".doc")){
+    return "DOC";
+  }
+
 
   return "FILE";
+
 }
 
 
+/* ================================
+   FILE SIZE
+================================ */
+
+function formatFileSize(bytes){
+
+  if(!bytes){
+    return "0 KB";
+  }
+
+
+  const mb =
+    bytes/(1024*1024);
+
+
+  if(mb>=1){
+    return mb.toFixed(2)+" MB";
+  }
+
+
+  return Math.max(
+    1,
+    Math.round(bytes/1024)
+  )+" KB";
+
+}
+
+
+/* ================================
+   LIBRARY
+================================ */
+
 function renderLibrary(){
 
-  const box=document.getElementById("libraryList");
+  const box =
+    document.getElementById("libraryList");
+
 
   if(!box)return;
+
 
   if(materials.length===0){
 
@@ -1657,7 +2312,8 @@ function renderLibrary(){
 
         <br>
 
-        <button class="btn btn-dark"
+        <button
+          class="btn btn-dark"
           onclick="showView('admin')">
           ➕ PDF / Word ጨምር
         </button>
@@ -1667,87 +2323,455 @@ function renderLibrary(){
     `;
 
     return;
+
   }
 
-  box.innerHTML=materials.map(item=>`
 
-    <div class="file-card">
+  renderLibraryItems(
+    materials,
+    box
+  );
 
-      <div class="file-icon">
-        ${item.type==="PDF" ? "📕" : "📝"}
-      </div>
-
-      <div class="file-info">
-
-        <h4>${escapeHtml(item.title)}</h4>
-
-        <p>
-          ${escapeHtml(item.category)}
-          • ${item.type}
-          • ${escapeHtml(item.filename)}
-        </p>
-
-        ${
-          item.description
-          ? `<p>${escapeHtml(item.description)}</p>`
-          : ""
-        }
-
-      </div>
-
-      <button class="small-btn gold"
-        onclick="openFile('${item.id}')">
-        📖
-      </button>
-
-    </div>
-
-  `).join("");
 }
 
 
-function openFile(id){
+function renderLibraryItems(items,box){
 
-  const item=materials.find(x=>x.id===id);
+  if(items.length===0){
+
+    box.innerHTML=`
+
+      <div class="empty">
+
+        <div>🔎</div>
+
+        <p>
+          የፈለጉት የLibrary ይዘት አልተገኘም።
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  box.innerHTML =
+    items.map(item=>`
+
+      <div class="file-card">
+
+        <div class="file-icon">
+
+          ${
+            item.type==="PDF"
+            ? "📕"
+            : "📝"
+          }
+
+        </div>
+
+
+        <div class="file-info">
+
+          <h4>
+            ${escapeHtml(item.title)}
+          </h4>
+
+          <p>
+            ${escapeHtml(item.category)}
+            • ${escapeHtml(item.type)}
+            • ${escapeHtml(item.filename)}
+          </p>
+
+          <p>
+            ${formatFileSize(item.size)}
+            • ${escapeHtml(item.created)}
+          </p>
+
+          ${
+            item.description
+            ?
+            `<p>
+              ${escapeHtml(item.description)}
+            </p>`
+            :
+            ""
+          }
+
+        </div>
+
+
+        <div class="file-actions">
+
+          <button
+            class="small-btn gold"
+            onclick="openMaterial('${escapeAttr(item.id)}')">
+            📖
+          </button>
+
+          <button
+            class="small-btn"
+            onclick="downloadMaterial('${escapeAttr(item.id)}')">
+            ⬇️
+          </button>
+
+        </div>
+
+      </div>
+
+    `).join("");
+
+}
+
+
+/* ================================
+   LIBRARY SEARCH
+================================ */
+
+function filterLibrary(query){
+
+  const q =
+    query
+      .trim()
+      .toLowerCase();
+
+
+  const box =
+    document.getElementById("libraryList");
+
+
+  if(!q){
+
+    renderLibrary();
+
+    return;
+
+  }
+
+
+  const results =
+    materials.filter(item=>{
+
+      const text =
+        (
+          item.title+
+          " "+
+          item.category+
+          " "+
+          item.description+
+          " "+
+          item.filename
+        ).toLowerCase();
+
+
+      return text.includes(q);
+
+    });
+
+
+  renderLibraryItems(
+    results,
+    box
+  );
+
+}
+
+
+/* ================================
+   OPEN MATERIAL
+================================ */
+
+function openMaterial(id){
+
+  const item =
+    materials.find(
+      x=>x.id===id
+    );
+
+
+  if(!item){
+
+    alert(
+      "ይህ ፋይል አልተገኘም።"
+    );
+
+    return;
+
+  }
+
+
+  if(!item.data){
+
+    alert(
+      "ይህ ፋይል በዚህ browser ላይ አይገኝም።"
+    );
+
+    return;
+
+  }
+
+
+  /*
+    PDF can normally be opened directly.
+    Word files may download or open depending
+    on the phone/browser.
+  */
+
+  const win =
+    window.open(
+      item.data,
+      "_blank"
+    );
+
+
+  if(!win){
+
+    downloadMaterial(id);
+
+  }
+
+}
+
+
+/* ================================
+   DOWNLOAD MATERIAL
+================================ */
+
+function downloadMaterial(id){
+
+  const item =
+    materials.find(
+      x=>x.id===id
+    );
+
+
+  if(!item || !item.data){
+
+    alert(
+      "ይህ ፋይል አይገኝም።"
+    );
+
+    return;
+
+  }
+
+
+  const a =
+    document.createElement("a");
+
+
+  a.href =
+    item.data;
+
+
+  a.download =
+    item.filename;
+
+
+  document.body.appendChild(a);
+
+
+  a.click();
+
+
+  a.remove();
+
+}
+
+
+/* ================================
+   DELETE MATERIAL
+================================ */
+
+function deleteMaterial(id){
+
+  const item =
+    materials.find(
+      x=>x.id===id
+    );
+
 
   if(!item)return;
 
-  if(item.url){
 
-    window.open(item.url,"_blank");
-
-  }else{
-
-    alert(
-      "ይህ ፋይል አሁን በዚህ browser ላይ አይገኝም።"
+  const confirmDelete =
+    confirm(
+      "“"+
+      item.title+
+      "”\n\n"+
+      "ከLibrary ማጥፋት ትፈልጋለህ?"
     );
-  }
+
+
+  if(!confirmDelete)return;
+
+
+  materials =
+    materials.filter(
+      x=>x.id!==id
+    );
+
+
+  localStorage.setItem(
+    "apostolicMaterials",
+    JSON.stringify(materials)
+  );
+
+
+  renderLibrary();
+  renderAdminMaterials();
+
+
+  alert(
+    "🗑️ ይዘቱ ተሰርዟል።"
+  );
+
 }
 
+
+/* ================================
+   ADMIN MATERIAL LIST
+================================ */
+
+function renderAdminMaterials(){
+
+  const box =
+    document.getElementById(
+      "adminMaterials"
+    );
+
+
+  if(!box)return;
+
+
+  if(materials.length===0){
+
+    box.innerHTML=`
+
+      <div class="empty">
+
+        <div>📚</div>
+
+        <p>
+          እስካሁን የተጨመረ የLibrary
+          ይዘት የለም።
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  box.innerHTML =
+    materials.map(item=>`
+
+      <div class="list-card mb">
+
+        <div class="list-icon">
+
+          ${
+            item.type==="PDF"
+            ? "📕"
+            : "📝"
+          }
+
+        </div>
+
+
+        <div class="list-info">
+
+          <h4>
+            ${escapeHtml(item.title)}
+          </h4>
+
+          <p>
+            ${escapeHtml(item.category)}
+            • ${escapeHtml(item.type)}
+            • ${formatFileSize(item.size)}
+          </p>
+
+        </div>
+
+
+        <button
+          class="small-btn"
+          onclick="downloadMaterial('${escapeAttr(item.id)}')">
+          ⬇️
+        </button>
+
+
+        <button
+          class="small-btn red"
+          onclick="deleteMaterial('${escapeAttr(item.id)}')">
+          🗑️
+        </button>
+
+      </div>
+
+    `).join("");
+
+}
+
+
+/* ================================
+   CLEAR ALL MATERIALS
+================================ */
 
 function clearMaterials(){
 
   if(!confirm(
-    "የBrowser prototype ውስጥ ያሉ የLibrary ፋይሎችን ማጥፋት ትፈልጋለህ?"
-  )) return;
+    "ሁሉንም የLibrary ፋይሎች ማጥፋት ትፈልጋለህ?"
+  )){
+    return;
+  }
+
 
   materials=[];
 
-  sessionStorage.removeItem("currentMaterials");
+
+  localStorage.removeItem(
+    "apostolicMaterials"
+  );
+
 
   renderLibrary();
+  renderAdminMaterials();
 
-  alert("የLocal materials ተሰርዘዋል።");
+
+  alert(
+    "🗑️ ሁሉም Local materials ተሰርዘዋል።"
+  );
+
 }
 
 
+/* ================================
+   GLOBAL SEARCH
+================================ */
+
 function globalSearch(query){
 
-  const q=query.trim().toLowerCase();
+  const q =
+    query
+      .trim()
+      .toLowerCase();
 
-  const box=document.getElementById("searchResults");
+
+  const box =
+    document.getElementById(
+      "searchResults"
+    );
+
 
   if(!box)return;
+
 
   if(!q){
 
@@ -1757,14 +2781,18 @@ function globalSearch(query){
 
         <div>🔎</div>
 
-        <p>የሚፈልጉትን ይዘት ይጻፉ።</p>
+        <p>
+          የሚፈልጉትን ይዘት ይጻፉ።
+        </p>
 
       </div>
 
     `;
 
     return;
+
   }
+
 
   const builtIn=[
 
@@ -1800,20 +2828,42 @@ function globalSearch(query){
 
   ];
 
+
   const all=[
+
     ...builtIn,
+
     ...materials.map(x=>({
+
       title:x.title,
+
       category:x.category,
-      icon:x.type==="PDF"?"📕":"📝"
+
+      icon:
+        x.type==="PDF"
+        ? "📕"
+        : "📝",
+
+      materialId:x.id
+
     }))
+
   ];
 
-  const results=all.filter(x=>
-    (x.title+" "+x.category)
+
+  const results =
+    all.filter(x=>
+
+      (
+        x.title+
+        " "+
+        x.category
+      )
       .toLowerCase()
       .includes(q)
-  );
+
+    );
+
 
   if(results.length===0){
 
@@ -1823,44 +2873,73 @@ function globalSearch(query){
 
         <div>😔</div>
 
-        <p>የፈለጉት ይዘት አልተገኘም።</p>
+        <p>
+          የፈለጉት ይዘት አልተገኘም።
+        </p>
 
       </div>
 
     `;
 
     return;
+
   }
+
 
   box.innerHTML=`
 
     <div class="list">
 
-      ${results.map(x=>`
+      ${
+        results.map(x=>`
 
-        <div class="list-card">
+          <div class="list-card">
 
-          <div class="list-icon">
-            ${x.icon}
+            <div class="list-icon">
+              ${escapeHtml(x.icon)}
+            </div>
+
+            <div class="list-info">
+
+              <h4>
+                ${escapeHtml(x.title)}
+              </h4>
+
+              <p>
+                ${escapeHtml(x.category)}
+              </p>
+
+            </div>
+
+            ${
+              x.materialId
+              ?
+              `
+              <button
+                class="small-btn gold"
+                onclick="openMaterial('${escapeAttr(x.materialId)}')">
+                📖
+              </button>
+              `
+              :
+              ""
+            }
+
           </div>
 
-          <div class="list-info">
-
-            <h4>${escapeHtml(x.title)}</h4>
-
-            <p>${escapeHtml(x.category)}</p>
-
-          </div>
-
-        </div>
-
-      `).join("")}
+        `).join("")
+      }
 
     </div>
 
   `;
+
 }
 
+
+/* ================================
+   ESCAPE HTML
+================================ */
 
 function escapeHtml(value){
 
@@ -1870,32 +2949,35 @@ function escapeHtml(value){
     .replace(/>/g,"&gt;")
     .replace(/"/g,"&quot;")
     .replace(/'/g,"&#039;");
+
 }
 
+
+/* ================================
+   ESCAPE ATTRIBUTE
+================================ */
 
 function escapeAttr(value){
 
   return String(value)
+    .replace(/\\/g,"\\\\")
     .replace(/'/g,"\\'")
     .replace(/"/g,"&quot;");
+
 }
 
 
-/* Restore current browser session materials */
+/* ================================
+   START APP
+================================ */
 
 (function(){
 
-  const stored=
-    JSON.parse(
-      sessionStorage.getItem("currentMaterials") || "[]"
-    );
-
-  if(stored.length){
-    materials=stored;
-  }
-
   renderLibrary();
+
   renderSaved();
+
+  renderAdminMaterials();
 
 })();
 
