@@ -15,7 +15,7 @@ content="የኢየሱስ ልጆች Apostolic Media App - Bible Teaching, Songs, 
   --navy2:#0d2b52;
   --gold:#d6a84f;
   --gold2:#f1d48a;
-  --white:#ffffff;
+  --white:#fff;
   --light:#f4f7fb;
   --text:#172033;
   --muted:#687386;
@@ -39,13 +39,8 @@ body{
   padding-bottom:78px;
 }
 
-button,input,select,textarea{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
 
 .app-header{
   position:sticky;
@@ -88,9 +83,7 @@ button{
   line-height:1.25;
 }
 
-.brand small{
-  color:#dbe5f5;
-}
+.brand small{color:#dbe5f5}
 
 .header-actions{
   display:flex;
@@ -112,13 +105,8 @@ button{
   padding:16px;
 }
 
-.view{
-  display:none;
-}
-
-.view.active{
-  display:block;
-}
+.view{display:none}
+.view.active{display:block}
 
 .hero{
   margin-top:4px;
@@ -141,9 +129,7 @@ button{
   line-height:1.6;
 }
 
-.gold{
-  color:var(--gold2);
-}
+.gold{color:var(--gold2)}
 
 .section-title{
   margin:25px 0 12px;
@@ -153,9 +139,7 @@ button{
   gap:10px;
 }
 
-.section-title h2{
-  font-size:20px;
-}
+.section-title h2{font-size:20px}
 
 .card{
   background:white;
@@ -176,6 +160,7 @@ button{
   border-radius:16px;
   padding:15px;
   box-shadow:var(--shadow);
+  cursor:pointer;
 }
 
 .stat-icon{
@@ -256,34 +241,12 @@ button{
   font-weight:bold;
 }
 
-.btn-primary{
-  background:var(--navy);
-  color:white;
-}
-
-.btn-gold{
-  background:var(--gold);
-  color:var(--navy);
-}
-
-.btn-green{
-  background:var(--green);
-  color:white;
-}
-
-.btn-red{
-  background:var(--red);
-  color:white;
-}
-
-.btn-light{
-  background:#edf2f8;
-  color:var(--navy);
-}
-
-.full{
-  width:100%;
-}
+.btn-primary{background:var(--navy);color:white}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-green{background:var(--green);color:white}
+.btn-red{background:var(--red);color:white}
+.btn-light{background:#edf2f8;color:var(--navy)}
+.full{width:100%}
 
 input,select,textarea{
   width:100%;
@@ -359,9 +322,7 @@ label{
   box-shadow:var(--shadow);
 }
 
-.content-card h3{
-  margin-bottom:7px;
-}
+.content-card h3{margin-bottom:7px}
 
 .content-actions{
   display:flex;
@@ -437,9 +398,7 @@ label{
   padding:18px;
 }
 
-.modal.show{
-  display:flex;
-}
+.modal.show{display:flex}
 
 .modal-box{
   background:white;
@@ -466,9 +425,7 @@ label{
   text-align:center;
 }
 
-.toast.show{
-  display:block;
-}
+.toast.show{display:block}
 
 .file-row{
   border:1px solid #e1e6ef;
@@ -486,9 +443,7 @@ label{
   border:1px solid #e5eaf2;
 }
 
-.folder-icon{
-  font-size:30px;
-}
+.folder-icon{font-size:30px}
 
 .folder-top{
   display:flex;
@@ -540,6 +495,35 @@ label{
   color:var(--muted);
 }
 
+.language-folder{
+  border:2px solid #e6ebf3;
+  border-radius:16px;
+  padding:15px;
+  margin-top:10px;
+  background:#fbfcfe;
+}
+
+.language-folder h3{
+  color:var(--navy);
+}
+
+.song-folder-count{
+  margin-top:4px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.folder-header-icon{
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#edf2f8;
+  font-size:25px;
+}
+
 @media(min-width:700px){
   .grid{
     grid-template-columns:repeat(4,1fr);
@@ -556,8 +540,10 @@ label{
 
 <header class="app-header">
   <div class="header-row">
+
     <div class="brand">
       <div class="logo">✝</div>
+
       <div>
         <h1>የኢየሱስ ልጆች</h1>
         <small>Apostolic Media App 🕎</small>
@@ -565,56 +551,97 @@ label{
     </div>
 
     <div class="header-actions">
-      <button class="icon-btn" onclick="showView('search')">🔎</button>
-      <button class="icon-btn" onclick="showView('saved')">🔖</button>
+      <button class="icon-btn"
+              onclick="showView('search')">
+        🔎
+      </button>
+
+      <button class="icon-btn"
+              onclick="showView('saved')">
+        🔖
+      </button>
     </div>
+
   </div>
 </header>
 
+
 <main class="container">
+
 
 <!-- HOME -->
 <section id="home" class="view active">
 
   <div class="hero">
     <h2>Welcome to Apostolic Media 🕎</h2>
+
     <p>
       Bible Teaching, Apostolic Songs, Christian Library,
       Videos and more — all in one place.
     </p>
   </div>
 
+
   <div class="section-title">
     <h2>Quick Access</h2>
   </div>
 
+
   <div class="grid">
 
-    <div class="stat-card" onclick="showView('teaching')">
+    <div class="stat-card"
+         onclick="showView('teaching')">
+
       <div class="stat-icon">📖</div>
       <b>Bible Teaching</b>
-      <div class="muted">Bible teachings</div>
+
+      <div class="muted">
+        Bible teachings
+      </div>
+
     </div>
 
-    <div class="stat-card" onclick="showView('songs')">
+
+    <div class="stat-card"
+         onclick="showView('songs')">
+
       <div class="stat-icon">🎵</div>
       <b>Songs</b>
-      <div class="muted">Apostolic songs</div>
+
+      <div class="muted">
+        Apostolic songs
+      </div>
+
     </div>
 
-    <div class="stat-card" onclick="showView('library')">
+
+    <div class="stat-card"
+         onclick="showView('library')">
+
       <div class="stat-icon">📚</div>
       <b>Library</b>
-      <div class="muted">Books & materials</div>
+
+      <div class="muted">
+        Books & materials
+      </div>
+
     </div>
 
-    <div class="stat-card" onclick="showView('premium')">
+
+    <div class="stat-card"
+         onclick="showView('premium')">
+
       <div class="stat-icon">⭐</div>
       <b>Premium</b>
-      <div class="muted">Premium content</div>
+
+      <div class="muted">
+        Premium content
+      </div>
+
     </div>
 
   </div>
+
 
   <div class="section-title">
     <h2>Featured Teaching</h2>
@@ -622,14 +649,20 @@ label{
 
   <div id="featuredTeaching"></div>
 
+
   <div class="card">
+
     <h3>💰 Support the Ministry</h3>
+
     <p class="muted">
       Support Christian media, Bible teaching and digital resources.
     </p>
-    <button class="btn btn-gold full" onclick="showView('support')">
+
+    <button class="btn btn-gold full"
+            onclick="showView('support')">
       ❤️ Support
     </button>
+
   </div>
 
 </section>
@@ -639,20 +672,26 @@ label{
 <section id="teaching" class="view">
 
   <div class="section-title">
+
     <h2>📖 Bible Teaching</h2>
 
     <button class="btn btn-gold"
             onclick="openTeachingEditor()">
       ➕ Add Teaching
     </button>
+
   </div>
 
+
   <div class="card">
+
     <p class="muted">
       Write or paste your Bible teaching directly here.
       You can copy your material from Microsoft Word and edit it anytime.
     </p>
+
   </div>
+
 
   <div id="teachingList"></div>
 
@@ -663,43 +702,61 @@ label{
 <section id="songs" class="view">
 
   <div class="section-title">
-    <h2>🎵 Apostolic Songs</h2>
-
-    <button class="btn btn-gold"
-            onclick="openSongEditor()">
-      ➕ Upload Song
-    </button>
+    <h2>🎵 Apostolic Songs 🕎</h2>
   </div>
+
 
   <div class="card">
+
     <p class="muted">
-      Upload your Apostolic songs and organize them inside the app.
+      Choose a language first. Then create folders for similar
+      Apostolic songs and upload your audio files inside each folder.
     </p>
+
   </div>
 
-  <div class="content-card">
-    <h3>🎵 Demo Apostolic Song</h3>
 
-    <p class="muted">
-      Audio player placeholder.
-    </p>
+  <!-- SIDAMA -->
+  <div class="card">
 
-    <div class="content-actions">
-      <button class="btn btn-primary" onclick="playDemoSong()">
-        ▶️ Play
+    <div class="section-title"
+         style="margin-top:0">
+
+      <h2>🎵 ሲዳሙ አፊ ፋርሶ</h2>
+
+      <button class="btn btn-gold"
+              onclick="createSongFolder('sidama')">
+        ➕ Create New Folder
       </button>
 
-      <button class="small-btn"
-              onclick="likeContent('demo-song')">
-        ❤️ Like
-      </button>
-
-      <button class="small-btn"
-              onclick="shareContent('Apostolic Song')">
-        🔗 Share
-      </button>
     </div>
+
+
+    <div id="sidamaSongFolders"></div>
+
   </div>
+
+
+  <!-- AMHARIC -->
+  <div class="card">
+
+    <div class="section-title"
+         style="margin-top:0">
+
+      <h2>🎵 የአማርኛ መዝሙሮች</h2>
+
+      <button class="btn btn-gold"
+              onclick="createSongFolder('amharic')">
+        ➕ Create New Folder
+      </button>
+
+    </div>
+
+
+    <div id="amharicSongFolders"></div>
+
+  </div>
+
 
   <div id="songList"></div>
 
@@ -710,13 +767,16 @@ label{
 <section id="library" class="view">
 
   <div class="section-title">
+
     <h2>📚 Library</h2>
 
     <button class="btn btn-gold"
             onclick="openFolderEditor()">
       📁 New Folder
     </button>
+
   </div>
+
 
   <div id="libraryBreadcrumb"></div>
 
@@ -734,13 +794,17 @@ label{
     <h2>🎬 Videos</h2>
   </div>
 
+
   <div class="content-card">
+
     <h3>Christian Teaching Videos</h3>
+
     <p class="muted">
       Video links can be connected to YouTube or another video platform.
     </p>
 
     <div class="content-actions">
+
       <button class="small-btn"
               onclick="likeContent('video-section')">
         ❤️ Like
@@ -750,7 +814,9 @@ label{
               onclick="shareContent('Christian Teaching Video')">
         🔗 Share
       </button>
+
     </div>
+
   </div>
 
 </section>
@@ -760,6 +826,7 @@ label{
 <section id="premium" class="view">
 
   <div class="premium-box">
+
     <h2>⭐ Premium Content</h2>
 
     <p style="margin-top:10px;color:#d9e4f3;line-height:1.6">
@@ -773,6 +840,7 @@ label{
             onclick="premiumActivity()">
       ⭐ Join Premium
     </button>
+
   </div>
 
 </section>
@@ -785,7 +853,9 @@ label{
     <h2>❤️ Support</h2>
   </div>
 
+
   <div class="card">
+
     <h3>Support the Ministry</h3>
 
     <p class="muted">
@@ -799,6 +869,7 @@ label{
             onclick="donationActivity()">
       ❤️ Support / Donate
     </button>
+
   </div>
 
 </section>
@@ -811,12 +882,13 @@ label{
     <h2>🔎 Search</h2>
   </div>
 
+
   <input
     type="search"
     id="searchInput"
     placeholder="Search Bible teaching, songs, books..."
-    oninput="globalSearch()"
-  >
+    oninput="globalSearch()">
+
 
   <div id="searchResults"></div>
 
@@ -842,15 +914,24 @@ label{
     <h2>👤 Account</h2>
   </div>
 
+
   <div class="card">
-    <h3>የኢየሱስ ልጆች Apostolic Media App 🕎</h3>
+
+    <h3>
+      የኢየሱስ ልጆች Apostolic Media App 🕎
+    </h3>
+
     <p class="muted">
       Christian media platform.
     </p>
+
   </div>
 
+
   <div class="card">
+
     <h3>💰 Monetization</h3>
+
     <p class="muted">
       View earnings, engagement, revenue sources and withdrawal requests.
     </p>
@@ -861,9 +942,12 @@ label{
             onclick="showView('monetization')">
       💰 Open Monetization Dashboard
     </button>
+
   </div>
 
+
   <div class="card">
+
     <h3>👨‍💻 Developer</h3>
 
     <p style="margin-top:10px">
@@ -890,14 +974,19 @@ label{
       style="display:block;text-align:center;text-decoration:none">
       📞 +251 934 197 300
     </a>
+
   </div>
 
+
   <div class="card">
+
     <h3>⚙️ Admin</h3>
+
     <button class="btn btn-primary full"
             onclick="showView('admin')">
       Open Admin
     </button>
+
   </div>
 
 </section>
@@ -910,7 +999,9 @@ label{
     <h2>⚙️ Admin Panel</h2>
   </div>
 
+
   <div class="card">
+
     <h3>📖 Bible Teaching Management</h3>
 
     <p class="muted">
@@ -927,30 +1018,34 @@ label{
     <div id="adminTeachingList"
          style="margin-top:15px">
     </div>
+
   </div>
 
 
   <div class="card">
+
     <h3>🎵 Song Management</h3>
 
     <p class="muted">
-      Upload and manage Apostolic songs.
+      Manage song folders and upload Apostolic songs.
     </p>
 
     <br>
 
     <button class="btn btn-primary full"
-            onclick="openSongEditor()">
-      ➕ Upload Song
+            onclick="showView('songs')">
+      🎵 Open Songs & Upload
     </button>
 
     <div id="adminSongList"
          style="margin-top:15px">
     </div>
+
   </div>
 
 
   <div class="card">
+
     <h3>📚 Library & Folders</h3>
 
     <button class="btn btn-primary full"
@@ -968,10 +1063,12 @@ label{
     <div id="adminLibraryList"
          style="margin-top:15px">
     </div>
+
   </div>
 
 
   <div class="card">
+
     <h3>💰 Monetization</h3>
 
     <p class="muted">
@@ -984,6 +1081,7 @@ label{
             onclick="showView('monetization')">
       Open Earnings Dashboard
     </button>
+
   </div>
 
 </section>
@@ -996,8 +1094,12 @@ label{
     <h2>💰 Monetization Dashboard</h2>
   </div>
 
+
   <div class="big-balance">
-    <div class="label">Available Balance</div>
+
+    <div class="label">
+      Available Balance
+    </div>
 
     <div class="value"
          id="availableBalance">
@@ -1005,11 +1107,14 @@ label{
     </div>
 
     <div style="margin-top:15px">
+
       <button class="btn btn-gold"
               onclick="openWithdrawal()">
         🏦 Withdraw
       </button>
+
     </div>
+
   </div>
 
 
@@ -1017,47 +1122,59 @@ label{
     <h2>💰 Earnings</h2>
   </div>
 
+
   <div class="grid">
 
     <div class="stat-card">
       <div class="stat-icon">💰</div>
+
       <div class="stat-value"
            id="totalEarnings">
         0
       </div>
+
       <div class="stat-label">
         Total Earnings
       </div>
     </div>
 
+
     <div class="stat-card">
       <div class="stat-icon">📅</div>
+
       <div class="stat-value"
            id="todayEarnings">
         0
       </div>
+
       <div class="stat-label">
         Today
       </div>
     </div>
 
+
     <div class="stat-card">
       <div class="stat-icon">📆</div>
+
       <div class="stat-value"
            id="weekEarnings">
         0
       </div>
+
       <div class="stat-label">
         This Week
       </div>
     </div>
 
+
     <div class="stat-card">
       <div class="stat-icon">🗓️</div>
+
       <div class="stat-value"
            id="monthEarnings">
         0
       </div>
+
       <div class="stat-label">
         This Month
       </div>
@@ -1070,47 +1187,59 @@ label{
     <h2>📊 Engagement</h2>
   </div>
 
+
   <div class="grid">
 
     <div class="stat-card">
       <div class="stat-icon">👁️</div>
+
       <div class="stat-value"
            id="viewsStat">
         0
       </div>
+
       <div class="stat-label">
         Views
       </div>
     </div>
 
+
     <div class="stat-card">
       <div class="stat-icon">❤️</div>
+
       <div class="stat-value"
            id="likesStat">
         0
       </div>
+
       <div class="stat-label">
         Likes
       </div>
     </div>
 
+
     <div class="stat-card">
       <div class="stat-icon">🔗</div>
+
       <div class="stat-value"
            id="sharesStat">
         0
       </div>
+
       <div class="stat-label">
         Shares
       </div>
     </div>
 
+
     <div class="stat-card">
       <div class="stat-icon">📥</div>
+
       <div class="stat-value"
            id="downloadsStat">
         0
       </div>
+
       <div class="stat-label">
         Downloads
       </div>
@@ -1120,14 +1249,18 @@ label{
 
 
   <div class="card">
+
     <h3>⭐ Premium Activity</h3>
+
     <div class="stat-value"
          id="premiumStat">
       0
     </div>
+
     <div class="stat-label">
       Premium activities
     </div>
+
   </div>
 
 
@@ -1141,6 +1274,7 @@ label{
   <div class="section-title">
     <h2>🏦 Withdrawal</h2>
   </div>
+
 
   <div class="card">
 
@@ -1174,6 +1308,7 @@ label{
   <div class="section-title">
     <h2>👨‍💻 Developer</h2>
   </div>
+
 
   <div class="card">
 
@@ -1288,11 +1423,13 @@ label{
 
     </div>
 
+
     <label>Teaching Title</label>
 
     <input
       id="teachingTitle"
       placeholder="Example: God is One">
+
 
     <label>Category</label>
 
@@ -1300,11 +1437,13 @@ label{
       id="teachingCategory"
       placeholder="Example: One God / Apostolic">
 
+
     <label>Teaching Content</label>
 
     <textarea
       id="teachingContent"
       placeholder="Paste or write your complete Bible teaching here..."></textarea>
+
 
     <p class="muted">
       💡 You can copy the text from Word and paste it into this area.
@@ -1342,11 +1481,19 @@ label{
 
     </div>
 
+
+    <label>Song Folder</label>
+
+    <select id="songFolderSelect">
+    </select>
+
+
     <label>Song Title</label>
 
     <input
       id="songTitle"
       placeholder="Song title">
+
 
     <label>Artist / Minister</label>
 
@@ -1354,12 +1501,14 @@ label{
       id="songArtist"
       placeholder="Artist or minister">
 
+
     <label>Audio File</label>
 
     <input
       type="file"
       id="songFile"
       accept=".mp3,.wav,.m4a,.ogg,audio/*">
+
 
     <p class="muted">
       Supported: MP3, WAV, M4A and OGG.
@@ -1397,11 +1546,13 @@ label{
 
     </div>
 
+
     <label>Folder Name</label>
 
     <input
       id="folderName"
       placeholder="Example: Bible Studies">
+
 
     <button class="btn btn-primary full"
             onclick="saveFolder()">
@@ -1431,15 +1582,18 @@ label{
 
     </div>
 
+
     <label>Material Title</label>
 
     <input
       id="materialTitle"
       placeholder="Enter material title">
 
+
     <label>Folder</label>
 
     <select id="materialFolder"></select>
+
 
     <label>Select PDF / Word file</label>
 
@@ -1448,10 +1602,12 @@ label{
       id="materialFile"
       accept=".pdf,.doc,.docx">
 
+
     <button class="btn btn-primary full"
             onclick="addMaterial()">
       📤 Upload Material
     </button>
+
 
     <p class="muted"
        style="margin-top:10px">
@@ -1482,17 +1638,20 @@ label{
 
     </div>
 
+
     <label>Bank</label>
 
     <input
       value="Commercial Bank of Ethiopia (CBE)"
       disabled>
 
+
     <label>Account Holder</label>
 
     <input
       id="accountHolder"
       placeholder="Full name">
+
 
     <label>CBE Account Number</label>
 
@@ -1501,6 +1660,7 @@ label{
       inputmode="numeric"
       placeholder="CBE account number">
 
+
     <label>Withdrawal Amount (Birr)</label>
 
     <input
@@ -1508,6 +1668,7 @@ label{
       type="number"
       min="500"
       placeholder="Minimum 500 Birr">
+
 
     <p class="muted">
       Minimum prototype withdrawal: 500 Birr.
@@ -1525,7 +1686,6 @@ label{
 </div>
 
 
-<!-- TOAST -->
 <div class="toast"
      id="toast">
 </div>
@@ -1545,12 +1705,13 @@ const STORAGE = {
   saved:"apostolicSaved",
   teachings:"apostolicTeachings",
   songs:"apostolicSongs",
-  folders:"apostolicFolders"
+  folders:"apostolicFolders",
+  songFolders:"apostolicSongFolders"
 };
 
 
 /* =========================================================
-   DEFAULT DATA
+   DATA
 ========================================================= */
 
 let stats = JSON.parse(
@@ -1605,98 +1766,17 @@ let folders = JSON.parse(
 ) || [];
 
 
+let songFolders = JSON.parse(
+  localStorage.getItem(STORAGE.songFolders)
+) || [];
+
+
 let currentFolderId = null;
+let currentSongFolderId = null;
+
 let editingTeachingId = null;
 let editingSongId = null;
 let editingFolderId = null;
-
-
-/* =========================================================
-   DEFAULT FOLDERS
-========================================================= */
-
-function initializeFolders(){
-
-  if(!folders.length){
-
-    folders = [
-
-      {
-        id:"folder-bible",
-        name:"Bible Studies",
-        date:new Date().toLocaleString()
-      },
-
-      {
-        id:"folder-apostolic",
-        name:"Apostolic Teachings",
-        date:new Date().toLocaleString()
-      },
-
-      {
-        id:"folder-books",
-        name:"Books",
-        date:new Date().toLocaleString()
-      },
-
-      {
-        id:"folder-sermons",
-        name:"Sermons",
-        date:new Date().toLocaleString()
-      },
-
-      {
-        id:"folder-other",
-        name:"Other Materials",
-        date:new Date().toLocaleString()
-      }
-
-    ];
-
-    saveAll();
-  }
-
-}
-
-
-initializeFolders();
-
-
-/* =========================================================
-   DEFAULT TEACHINGS
-========================================================= */
-
-function initializeTeachings(){
-
-  if(!teachings.length){
-
-    teachings = [
-
-      {
-        id:"god-is-one",
-        title:"God is One",
-        category:"One God",
-        content:"God is one, and His name is Jesus Christ.",
-        date:new Date().toLocaleString()
-      },
-
-      {
-        id:"word-became-flesh",
-        title:"ቃሉ ሥጋ ሆነ",
-        category:"Bible Teaching",
-        content:"John 1:1–14 — Bible teaching about the Word becoming flesh.",
-        date:new Date().toLocaleString()
-      }
-
-    ];
-
-    saveAll();
-  }
-
-}
-
-
-initializeTeachings();
 
 
 /* =========================================================
@@ -1744,7 +1824,175 @@ function saveAll(){
     STORAGE.folders,
     JSON.stringify(folders)
   );
+
+  localStorage.setItem(
+    STORAGE.songFolders,
+    JSON.stringify(songFolders)
+  );
 }
+
+
+/* =========================================================
+   LIBRARY DEFAULT FOLDERS
+========================================================= */
+
+function initializeFolders(){
+
+  if(!folders.length){
+
+    folders = [
+
+      {
+        id:"folder-bible",
+        name:"Bible Studies",
+        date:new Date().toLocaleString()
+      },
+
+      {
+        id:"folder-apostolic",
+        name:"Apostolic Teachings",
+        date:new Date().toLocaleString()
+      },
+
+      {
+        id:"folder-books",
+        name:"Books",
+        date:new Date().toLocaleString()
+      },
+
+      {
+        id:"folder-sermons",
+        name:"Sermons",
+        date:new Date().toLocaleString()
+      },
+
+      {
+        id:"folder-other",
+        name:"Other Materials",
+        date:new Date().toLocaleString()
+      }
+
+    ];
+
+    saveAll();
+  }
+}
+
+
+/* =========================================================
+   TEACHING DEFAULTS
+========================================================= */
+
+function initializeTeachings(){
+
+  if(!teachings.length){
+
+    teachings = [
+
+      {
+        id:"god-is-one",
+        title:"God is One",
+        category:"One God",
+        content:"God is one, and His name is Jesus Christ.",
+        date:new Date().toLocaleString()
+      },
+
+      {
+        id:"word-became-flesh",
+        title:"ቃሉ ሥጋ ሆነ",
+        category:"Bible Teaching",
+        content:"John 1:1–14 — Bible teaching about the Word becoming flesh.",
+        date:new Date().toLocaleString()
+      }
+
+    ];
+
+    saveAll();
+  }
+}
+
+
+/* =========================================================
+   SONG FOLDERS
+========================================================= */
+
+function initializeSongFolders(){
+
+  let changed = false;
+
+
+  const sidamaRootExists =
+    songFolders.some(
+      f => f.id === "sidama-song-root"
+    );
+
+
+  const amharicRootExists =
+    songFolders.some(
+      f => f.id === "amharic-song-root"
+    );
+
+
+  if(!sidamaRootExists){
+
+    songFolders.push({
+
+      id:"sidama-song-root",
+      name:"ሲዳሙ አፊ ፋርሶ",
+      language:"sidama",
+      parent:null,
+      root:true,
+      date:new Date().toLocaleString()
+
+    });
+
+    changed = true;
+  }
+
+
+  if(!amharicRootExists){
+
+    songFolders.push({
+
+      id:"amharic-song-root",
+      name:"የአማርኛ መዝሙሮች",
+      language:"amharic",
+      parent:null,
+      root:true,
+      date:new Date().toLocaleString()
+
+    });
+
+    changed = true;
+  }
+
+
+  /* Put old songs into Sidama root
+     so existing songs don't disappear. */
+
+  songs.forEach(song => {
+
+    if(!song.folderId){
+
+      song.folderId =
+        "sidama-song-root";
+
+      changed = true;
+    }
+
+  });
+
+
+  if(changed){
+    saveAll();
+  }
+
+}
+
+
+initializeFolders();
+initializeTeachings();
+initializeSongFolders();
 
 
 /* =========================================================
@@ -1758,8 +2006,10 @@ function showView(id){
       v.classList.remove("active")
     );
 
+
   const target =
     document.getElementById(id);
+
 
   if(target){
     target.classList.add("active");
@@ -1776,41 +2026,41 @@ function showView(id){
     document.querySelectorAll(".nav-item");
 
 
-  if(id === "home")
+  if(id==="home")
     navItems[0].classList.add("active");
 
-  if(id === "teaching")
+  if(id==="teaching")
     navItems[1].classList.add("active");
 
-  if(id === "songs")
+  if(id==="songs")
     navItems[2].classList.add("active");
 
-  if(id === "library")
+  if(id==="library")
     navItems[3].classList.add("active");
 
-  if(id === "account")
+  if(id==="account")
     navItems[4].classList.add("active");
 
 
-  if(id === "teaching")
+  if(id==="teaching")
     renderTeachings();
 
-  if(id === "songs")
+  if(id==="songs")
     renderSongs();
 
-  if(id === "library")
+  if(id==="library")
     renderLibrary();
 
-  if(id === "saved")
+  if(id==="saved")
     renderSaved();
 
-  if(id === "admin")
+  if(id==="admin")
     renderAdmin();
 
-  if(id === "monetization")
+  if(id==="monetization")
     renderMonetization();
 
-  if(id === "home")
+  if(id==="home")
     renderFeatured();
 
 
@@ -1836,9 +2086,7 @@ function incrementView(){
 }
 
 
-/* Count app opening as a view */
 stats.views++;
-
 saveAll();
 
 
@@ -1879,9 +2127,7 @@ async function shareContent(title){
 
     if(navigator.share){
 
-      await navigator.share(
-        shareData
-      );
+      await navigator.share(shareData);
 
     }else{
 
@@ -1890,7 +2136,6 @@ async function shareContent(title){
       );
 
       showToast("🔗 Link copied");
-
     }
 
   }catch(e){
@@ -1913,7 +2158,7 @@ function recordDownload(){
 
 
 /* =========================================================
-   SAVE CONTENT
+   SAVED
 ========================================================= */
 
 function saveContent(id,title){
@@ -1944,15 +2189,14 @@ function saveContent(id,title){
   saveAll();
 
   renderSaved();
+
 }
 
 
 function renderSaved(){
 
   const box =
-    document.getElementById(
-      "savedList"
-    );
+    document.getElementById("savedList");
 
 
   if(!saved.length){
@@ -1999,22 +2243,31 @@ function openSavedContent(id){
   const teaching =
     teachings.find(t => t.id === id);
 
+
   if(teaching){
 
     showView("teaching");
-
     return;
+
   }
+
 
   const song =
     songs.find(s => s.id === id);
+
 
   if(song){
 
     showView("songs");
 
+    if(song.folderId){
+      openSongFolder(song.folderId);
+    }
+
     return;
+
   }
+
 
   showView("library");
 }
@@ -2035,12 +2288,9 @@ function premiumActivity(){
   showToast(
     "⭐ Premium activity recorded"
   );
+
 }
 
-
-/* =========================================================
-   DONATION
-========================================================= */
 
 function donationActivity(){
 
@@ -2052,31 +2302,12 @@ function donationActivity(){
 
 
 /* =========================================================
-   DEMO SONG
-========================================================= */
-
-function playDemoSong(){
-
-  showToast(
-    "▶️ Demo player started"
-  );
-
-  stats.views++;
-
-  saveAll();
-
-  renderMonetization();
-}
-
-
-/* =========================================================
    TEACHING MANAGER
 ========================================================= */
 
 function openTeachingEditor(id=null){
 
   editingTeachingId = id;
-
 
   document.getElementById(
     "teachingModal"
@@ -2086,12 +2317,10 @@ function openTeachingEditor(id=null){
   if(id){
 
     const teaching =
-      teachings.find(
-        t => t.id === id
-      );
+      teachings.find(t => t.id === id);
 
-    if(!teaching)
-      return;
+
+    if(!teaching) return;
 
 
     document.getElementById(
@@ -2178,11 +2407,9 @@ function saveTeaching(){
 
   if(!title){
 
-    showToast(
-      "Enter teaching title"
-    );
-
+    showToast("Enter teaching title");
     return;
+
   }
 
 
@@ -2206,31 +2433,29 @@ function saveTeaching(){
 
     if(teaching){
 
-      teaching.title =
-        title;
+      teaching.title = title;
 
       teaching.category =
         category || "Bible Teaching";
 
-      teaching.content =
-        content;
+      teaching.content = content;
 
       teaching.updated =
         new Date().toLocaleString();
 
     }
 
+
     showToast(
       "✏️ Teaching updated"
     );
+
 
   }else{
 
     teachings.unshift({
 
-      id:
-        "teach-" +
-        Date.now(),
+      id:"teach-" + Date.now(),
 
       title:title,
 
@@ -2296,7 +2521,9 @@ function renderTeachings(){
         </h3>
 
         <span class="badge">
-          ${escapeHtml(t.category || "Bible Teaching")}
+          ${escapeHtml(
+            t.category || "Bible Teaching"
+          )}
         </span>
 
         <div class="teaching-text">
@@ -2310,33 +2537,28 @@ function renderTeachings(){
 
         <div class="content-actions">
 
-          <button
-            class="small-btn"
-            onclick="likeContent('${escapeHtml(t.id)}')">
+          <button class="small-btn"
+                  onclick="likeContent('${escapeHtml(t.id)}')">
             ❤️ Like
           </button>
 
-          <button
-            class="small-btn"
-            onclick="shareContent('${escapeHtml(t.title)}')">
+          <button class="small-btn"
+                  onclick="shareContent('${escapeHtml(t.title)}')">
             🔗 Share
           </button>
 
-          <button
-            class="small-btn"
-            onclick="saveContent('${escapeHtml(t.id)}','${escapeHtml(t.title)}')">
+          <button class="small-btn"
+                  onclick="saveContent('${escapeHtml(t.id)}','${escapeHtml(t.title)}')">
             🔖 Save
           </button>
 
-          <button
-            class="small-btn"
-            onclick="openTeachingEditor('${escapeHtml(t.id)}')">
+          <button class="small-btn"
+                  onclick="openTeachingEditor('${escapeHtml(t.id)}')">
             ✏️ Edit
           </button>
 
-          <button
-            class="small-btn"
-            onclick="deleteTeaching('${escapeHtml(t.id)}')">
+          <button class="small-btn"
+                  onclick="deleteTeaching('${escapeHtml(t.id)}')">
             🗑️ Delete
           </button>
 
@@ -2353,9 +2575,7 @@ function deleteTeaching(id){
 
   if(!confirm(
     "Delete this Bible teaching?"
-  )){
-    return;
-  }
+  )) return;
 
 
   teachings =
@@ -2378,9 +2598,7 @@ function deleteTeaching(id){
 
   renderFeatured();
 
-  showToast(
-    "Teaching deleted"
-  );
+  showToast("Teaching deleted");
 
 }
 
@@ -2404,8 +2622,7 @@ function renderFeatured(){
   }
 
 
-  const t =
-    teachings[0];
+  const t = teachings[0];
 
 
   box.innerHTML = `
@@ -2417,29 +2634,31 @@ function renderFeatured(){
       </h3>
 
       <span class="badge">
-        ${escapeHtml(t.category || "Bible Teaching")}
+        ${escapeHtml(
+          t.category || "Bible Teaching"
+        )}
       </span>
 
       <p class="muted"
          style="margin-top:10px">
+
         ${escapeHtml(
           t.content.length > 180
           ? t.content.substring(0,180) + "..."
           : t.content
         )}
+
       </p>
 
       <div class="content-actions">
 
-        <button
-          class="small-btn"
-          onclick="showView('teaching')">
+        <button class="small-btn"
+                onclick="showView('teaching')">
           📖 Read Teaching
         </button>
 
-        <button
-          class="small-btn"
-          onclick="saveContent('${escapeHtml(t.id)}','${escapeHtml(t.title)}')">
+        <button class="small-btn"
+                onclick="saveContent('${escapeHtml(t.id)}','${escapeHtml(t.title)}')">
           🔖 Save
         </button>
 
@@ -2453,8 +2672,448 @@ function renderFeatured(){
 
 
 /* =========================================================
-   SONG MANAGER
+   SONG FOLDER MANAGER
 ========================================================= */
+
+function createSongFolder(language){
+
+  initializeSongFolders();
+
+
+  const root =
+    songFolders.find(
+      f =>
+        f.root &&
+        f.language === language
+    );
+
+
+  if(!root) return;
+
+
+  const name =
+    prompt(
+      "Enter new song folder name:"
+    );
+
+
+  if(name === null) return;
+
+
+  const folderName =
+    name.trim();
+
+
+  if(!folderName){
+
+    showToast(
+      "Enter folder name"
+    );
+
+    return;
+  }
+
+
+  const duplicate =
+    songFolders.some(
+      f =>
+        f.language === language &&
+        f.parent === root.id &&
+        f.name.toLowerCase() ===
+        folderName.toLowerCase()
+    );
+
+
+  if(duplicate){
+
+    showToast(
+      "A folder with this name already exists"
+    );
+
+    return;
+  }
+
+
+  songFolders.push({
+
+    id:
+      "song-folder-" +
+      Date.now(),
+
+    name:folderName,
+
+    language:language,
+
+    parent:root.id,
+
+    root:false,
+
+    date:
+      new Date().toLocaleString()
+
+  });
+
+
+  saveAll();
+
+  renderSongFolders();
+
+  showToast(
+    "📁 Song folder created"
+  );
+
+}
+
+
+function renderSongFolders(){
+
+  initializeSongFolders();
+
+
+  renderSongLanguageFolders(
+    "sidama",
+    document.getElementById(
+      "sidamaSongFolders"
+    )
+  );
+
+
+  renderSongLanguageFolders(
+    "amharic",
+    document.getElementById(
+      "amharicSongFolders"
+    )
+  );
+
+}
+
+
+function renderSongLanguageFolders(
+  language,
+  box
+){
+
+  if(!box) return;
+
+
+  const root =
+    songFolders.find(
+      f =>
+        f.root &&
+        f.language === language
+    );
+
+
+  if(!root){
+
+    box.innerHTML =
+      `<div class="empty">
+        Root folder not found.
+      </div>`;
+
+    return;
+  }
+
+
+  const children =
+    songFolders.filter(
+      f =>
+        f.parent === root.id &&
+        !f.root
+    );
+
+
+  const rootSongs =
+    songs.filter(
+      s =>
+        s.folderId === root.id
+    );
+
+
+  let html = "";
+
+
+  if(rootSongs.length){
+
+    html += `
+
+      <div class="language-folder">
+
+        <div class="folder-top">
+
+          <div style="display:flex;align-items:center;gap:12px">
+
+            <div class="folder-header-icon">
+              🎵
+            </div>
+
+            <div>
+
+              <h3>
+                ${escapeHtml(root.name)}
+              </h3>
+
+              <div class="song-folder-count">
+                ${rootSongs.length}
+                song${rootSongs.length===1?"":"s"}
+                directly in this folder
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="folder-actions">
+
+          <button class="btn btn-primary"
+                  onclick="openSongFolder('${root.id}')">
+            📂 Open
+          </button>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  if(!children.length && !rootSongs.length){
+
+    html += `
+      <div class="empty">
+        No folders yet.
+        <br>
+        Tap "Create New Folder" to create one.
+      </div>
+    `;
+
+  }
+
+
+  html += children.map(folder => {
+
+    const count =
+      songs.filter(
+        s => s.folderId === folder.id
+      ).length;
+
+
+    return `
+
+      <div class="language-folder">
+
+        <div class="folder-top">
+
+          <div style="display:flex;align-items:center;gap:12px">
+
+            <div class="folder-header-icon">
+              📁
+            </div>
+
+            <div>
+
+              <h3>
+                ${escapeHtml(folder.name)}
+              </h3>
+
+              <div class="song-folder-count">
+                ${count}
+                song${count===1?"":"s"}
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="folder-actions">
+
+          <button class="btn btn-primary"
+                  onclick="openSongFolder('${folder.id}')">
+            📂 Open
+          </button>
+
+          <button class="small-btn"
+                  onclick="renameSongFolder('${folder.id}')">
+            ✏️ Rename
+          </button>
+
+          <button class="small-btn"
+                  onclick="deleteSongFolder('${folder.id}')">
+            🗑️ Delete
+          </button>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }).join("");
+
+
+  box.innerHTML = html;
+
+}
+
+
+function openSongFolder(folderId){
+
+  initializeSongFolders();
+
+
+  const folder =
+    songFolders.find(
+      f => f.id === folderId
+    );
+
+
+  if(!folder){
+
+    showToast(
+      "Song folder not found"
+    );
+
+    return;
+  }
+
+
+  currentSongFolderId =
+    folderId;
+
+
+  renderSongs();
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+function closeSongFolder(){
+
+  currentSongFolderId = null;
+
+  renderSongs();
+
+}
+
+
+function openSongUpload(folderId){
+
+  editingSongId = null;
+
+  currentSongFolderId =
+    folderId;
+
+
+  populateSongFolderSelect(
+    folderId
+  );
+
+
+  document.getElementById(
+    "songModalTitle"
+  ).textContent =
+    "🎵 Upload Song";
+
+
+  document.getElementById(
+    "songTitle"
+  ).value = "";
+
+
+  document.getElementById(
+    "songArtist"
+  ).value = "";
+
+
+  document.getElementById(
+    "songFile"
+  ).value = "";
+
+
+  document.getElementById(
+    "songModal"
+  ).classList.add("show");
+
+}
+
+
+function populateSongFolderSelect(
+  selectedId
+){
+
+  const select =
+    document.getElementById(
+      "songFolderSelect"
+    );
+
+
+  const roots =
+    songFolders.filter(
+      f => f.root
+    );
+
+
+  let html = "";
+
+
+  roots.forEach(root => {
+
+    html += `
+
+      <option
+        value="${escapeHtml(root.id)}"
+        ${root.id===selectedId?"selected":""}>
+
+        ${escapeHtml(root.name)}
+
+      </option>
+
+    `;
+
+
+    const children =
+      songFolders.filter(
+        f =>
+          f.parent === root.id &&
+          !f.root
+      );
+
+
+    children.forEach(child => {
+
+      html += `
+
+        <option
+          value="${escapeHtml(child.id)}"
+          ${child.id===selectedId?"selected":""}>
+
+          📁 ${escapeHtml(root.name)}
+          / ${escapeHtml(child.name)}
+
+        </option>
+
+      `;
+
+    });
+
+  });
+
+
+  select.innerHTML = html;
+
+}
+
 
 function openSongEditor(id=null){
 
@@ -2474,8 +3133,12 @@ function openSongEditor(id=null){
       );
 
 
-    if(!song)
-      return;
+    if(!song) return;
+
+
+    populateSongFolderSelect(
+      song.folderId
+    );
 
 
     document.getElementById(
@@ -2496,7 +3159,18 @@ function openSongEditor(id=null){
       song.artist || "";
 
 
+    document.getElementById(
+      "songFile"
+    ).value = "";
+
+
   }else{
+
+    populateSongFolderSelect(
+      currentSongFolderId ||
+      "sidama-song-root"
+    );
+
 
     document.getElementById(
       "songModalTitle"
@@ -2536,6 +3210,12 @@ function closeSongEditor(){
 
 function saveSong(){
 
+  const folderId =
+    document.getElementById(
+      "songFolderSelect"
+    ).value;
+
+
   const title =
     document.getElementById(
       "songTitle"
@@ -2552,6 +3232,16 @@ function saveSong(){
     document.getElementById(
       "songFile"
     ).files[0];
+
+
+  if(!folderId){
+
+    showToast(
+      "Select a song folder"
+    );
+
+    return;
+  }
 
 
   if(!title){
@@ -2572,15 +3262,19 @@ function saveSong(){
       );
 
 
-    if(!song)
-      return;
+    if(!song) return;
 
 
     song.title =
       title;
 
+
     song.artist =
       artist || "Apostolic Minister";
+
+
+    song.folderId =
+      folderId;
 
 
     if(file){
@@ -2623,6 +3317,7 @@ function saveSong(){
 
 
       reader.readAsDataURL(file);
+
 
     }else{
 
@@ -2671,15 +3366,23 @@ function saveSong(){
         title:title,
 
         artist:
-          artist || "Apostolic Minister",
+          artist ||
+          "Apostolic Minister",
 
-        name:file.name,
+        folderId:
+          folderId,
 
-        type:file.type,
+        name:
+          file.name,
 
-        size:file.size,
+        type:
+          file.type,
 
-        data:e.target.result,
+        size:
+          file.size,
+
+        data:
+          e.target.result,
 
         date:
           new Date().toLocaleString()
@@ -2707,7 +3410,107 @@ function saveSong(){
 }
 
 
+function songCard(song){
+
+  const folder =
+    songFolders.find(
+      f => f.id === song.folderId
+    );
+
+
+  return `
+
+    <div class="content-card">
+
+      <h3>
+        🎵 ${escapeHtml(song.title)}
+      </h3>
+
+
+      <p class="muted">
+        ${escapeHtml(
+          song.artist || "Apostolic Minister"
+        )}
+      </p>
+
+
+      <span class="badge">
+        ${escapeHtml(
+          song.name || "Audio"
+        )}
+      </span>
+
+
+      <audio
+        class="song-player"
+        controls
+        src="${song.data}">
+      </audio>
+
+
+      <div class="muted"
+           style="margin-top:8px">
+
+        📁
+        ${escapeHtml(
+          folder
+          ? folder.name
+          : "No Folder"
+        )}
+
+      </div>
+
+
+      <div class="content-actions">
+
+        <button class="small-btn"
+                onclick="downloadSong('${escapeHtml(song.id)}')">
+          📥 Download
+        </button>
+
+
+        <button class="small-btn"
+                onclick="likeContent('${escapeHtml(song.id)}')">
+          ❤️ Like
+        </button>
+
+
+        <button class="small-btn"
+                onclick="shareContent('${escapeHtml(song.title)}')">
+          🔗 Share
+        </button>
+
+
+        <button class="small-btn"
+                onclick="saveContent('${escapeHtml(song.id)}','${escapeHtml(song.title)}')">
+          🔖 Save
+        </button>
+
+
+        <button class="small-btn"
+                onclick="openSongEditor('${escapeHtml(song.id)}')">
+          ✏️ Edit
+        </button>
+
+
+        <button class="small-btn"
+                onclick="deleteSong('${escapeHtml(song.id)}')">
+          🗑️ Delete
+        </button>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
 function renderSongs(){
+
+  initializeSongFolders();
+
 
   const box =
     document.getElementById(
@@ -2715,85 +3518,93 @@ function renderSongs(){
     );
 
 
-  if(!songs.length){
-
-    box.innerHTML =
-      `<div class="empty">
-        No uploaded songs yet.
-        <br><br>
-        Tap "Upload Song" to add your first song.
-      </div>`;
-
-    return;
-  }
+  renderSongFolders();
 
 
-  box.innerHTML =
-    songs.map(s => `
+  if(currentSongFolderId){
 
-      <div class="content-card">
+    const folder =
+      songFolders.find(
+        f => f.id === currentSongFolderId
+      );
 
-        <h3>
-          🎵 ${escapeHtml(s.title)}
-        </h3>
 
-        <p class="muted">
-          ${escapeHtml(s.artist || "")}
-        </p>
+    if(!folder){
 
-        <span class="badge">
-          ${escapeHtml(s.name || "Audio")}
-        </span>
+      currentSongFolderId = null;
 
-        <audio
-          class="song-player"
-          controls
-          src="${s.data}">
-        </audio>
+      renderSongs();
+
+      return;
+    }
+
+
+    const folderSongs =
+      songs.filter(
+        s =>
+          s.folderId ===
+          currentSongFolderId
+      );
+
+
+    box.innerHTML = `
+
+      <div class="card">
+
+        <div class="breadcrumb">
+          🎵 Songs /
+          <b>${escapeHtml(folder.name)}</b>
+        </div>
+
 
         <div class="content-actions">
 
           <button
-            class="small-btn"
-            onclick="downloadSong('${escapeHtml(s.id)}')">
-            📥 Download
+            class="btn btn-light"
+            onclick="closeSongFolder()">
+            ← All Song Folders
           </button>
 
-          <button
-            class="small-btn"
-            onclick="likeContent('${escapeHtml(s.id)}')">
-            ❤️ Like
-          </button>
 
           <button
-            class="small-btn"
-            onclick="shareContent('${escapeHtml(s.title)}')">
-            🔗 Share
-          </button>
-
-          <button
-            class="small-btn"
-            onclick="saveContent('${escapeHtml(s.id)}','${escapeHtml(s.title)}')">
-            🔖 Save
-          </button>
-
-          <button
-            class="small-btn"
-            onclick="openSongEditor('${escapeHtml(s.id)}')">
-            ✏️ Edit
-          </button>
-
-          <button
-            class="small-btn"
-            onclick="deleteSong('${escapeHtml(s.id)}')">
-            🗑️ Delete
+            class="btn btn-primary"
+            onclick="openSongUpload('${folder.id}')">
+            ➕ Upload Song
           </button>
 
         </div>
 
       </div>
 
-    `).join("");
+
+      ${
+        folderSongs.length
+        ? folderSongs.map(
+            song => songCard(song)
+          ).join("")
+        : `
+          <div class="empty">
+
+            📁 This song folder is empty.
+
+            <br><br>
+
+            Tap
+            <b>"Upload Song"</b>
+            to add an audio file.
+
+          </div>
+        `
+      }
+
+    `;
+
+
+    return;
+  }
+
+
+  box.innerHTML = "";
 
 }
 
@@ -2806,8 +3617,7 @@ function downloadSong(id){
     );
 
 
-  if(!song)
-    return;
+  if(!song) return;
 
 
   const a =
@@ -2819,7 +3629,8 @@ function downloadSong(id){
 
 
   a.download =
-    song.name || song.title;
+    song.name ||
+    song.title;
 
 
   document.body.appendChild(a);
@@ -2830,6 +3641,7 @@ function downloadSong(id){
 
 
   recordDownload();
+
 
   showToast(
     "📥 Song download recorded"
@@ -2842,9 +3654,7 @@ function deleteSong(id){
 
   if(!confirm(
     "Delete this song?"
-  )){
-    return;
-  }
+  )) return;
 
 
   songs =
@@ -2872,8 +3682,151 @@ function deleteSong(id){
 }
 
 
+function renameSongFolder(id){
+
+  const folder =
+    songFolders.find(
+      f => f.id === id
+    );
+
+
+  if(!folder || folder.root){
+
+    showToast(
+      "Main language folders cannot be renamed"
+    );
+
+    return;
+  }
+
+
+  const name =
+    prompt(
+      "Enter new folder name:",
+      folder.name
+    );
+
+
+  if(name === null) return;
+
+
+  const newName =
+    name.trim();
+
+
+  if(!newName){
+
+    showToast(
+      "Folder name cannot be empty"
+    );
+
+    return;
+  }
+
+
+  const duplicate =
+    songFolders.some(
+      f =>
+        f.id !== id &&
+        f.parent === folder.parent &&
+        f.name.toLowerCase() ===
+        newName.toLowerCase()
+    );
+
+
+  if(duplicate){
+
+    showToast(
+      "A folder with this name already exists"
+    );
+
+    return;
+  }
+
+
+  folder.name =
+    newName;
+
+
+  saveAll();
+
+  renderSongs();
+
+  showToast(
+    "📁 Folder renamed"
+  );
+
+}
+
+
+function deleteSongFolder(id){
+
+  const folder =
+    songFolders.find(
+      f => f.id === id
+    );
+
+
+  if(!folder) return;
+
+
+  if(folder.root){
+
+    showToast(
+      "Main language folders cannot be deleted"
+    );
+
+    return;
+  }
+
+
+  const count =
+    songs.filter(
+      s => s.folderId === id
+    ).length;
+
+
+  if(count > 0){
+
+    showToast(
+      "Delete or move the songs before deleting this folder"
+    );
+
+    return;
+  }
+
+
+  if(!confirm(
+    "Delete folder " +
+    folder.name +
+    "?"
+  )) return;
+
+
+  songFolders =
+    songFolders.filter(
+      f => f.id !== id
+    );
+
+
+  if(currentSongFolderId === id){
+    currentSongFolderId = null;
+  }
+
+
+  saveAll();
+
+  renderSongs();
+
+  showToast(
+    "📁 Song folder deleted"
+  );
+
+}
+
+
 /* =========================================================
-   FOLDER MANAGER
+   LIBRARY FOLDER MANAGER
 ========================================================= */
 
 function openFolderEditor(id=null){
@@ -2894,8 +3847,7 @@ function openFolderEditor(id=null){
       );
 
 
-    if(!folder)
-      return;
+    if(!folder) return;
 
 
     document.getElementById(
@@ -2965,16 +3917,14 @@ function saveFolder(){
 
 
     if(folder){
-
-      folder.name =
-        name;
-
+      folder.name = name;
     }
 
 
     showToast(
       "📁 Folder renamed"
     );
+
 
   }else{
 
@@ -3018,8 +3968,7 @@ function deleteFolder(id){
     );
 
 
-  if(!folder)
-    return;
+  if(!folder) return;
 
 
   const count =
@@ -3042,9 +3991,7 @@ function deleteFolder(id){
     "Delete folder " +
     folder.name +
     "?"
-  )){
-    return;
-  }
+  )) return;
 
 
   folders =
@@ -3108,8 +4055,10 @@ function populateFolderSelect(selectedId){
 
       <option
         value="${escapeHtml(f.id)}"
-        ${f.id === selectedId ? "selected" : ""}>
+        ${f.id===selectedId?"selected":""}>
+
         ${escapeHtml(f.name)}
+
       </option>
 
     `).join("");
@@ -3269,8 +4218,10 @@ function renderLibrary(){
     breadcrumb.innerHTML = `
 
       <div class="breadcrumb">
+
         📚 Library /
         <b>${escapeHtml(folder.name)}</b>
+
       </div>
 
     `;
@@ -3285,6 +4236,7 @@ function renderLibrary(){
           onclick="openLibraryRoot()">
           ← All Folders
         </button>
+
 
         <button
           class="btn btn-primary"
@@ -3301,7 +4253,8 @@ function renderLibrary(){
     const folderMaterials =
       materials.filter(
         m =>
-          m.folderId === currentFolderId
+          m.folderId ===
+          currentFolderId
       );
 
 
@@ -3329,6 +4282,7 @@ function renderLibrary(){
 
 
   breadcrumb.innerHTML = "";
+
 
   toolbar.innerHTML = `
 
@@ -3371,8 +4325,7 @@ function renderLibrary(){
 
           <div class="folder-top">
 
-            <div
-              style="display:flex;align-items:center;gap:12px">
+            <div style="display:flex;align-items:center;gap:12px">
 
               <div class="folder-icon">
                 📁
@@ -3385,7 +4338,8 @@ function renderLibrary(){
                 </h3>
 
                 <div class="muted">
-                  ${count} material${count === 1 ? "" : "s"}
+                  ${count}
+                  material${count===1?"":"s"}
                 </div>
 
               </div>
@@ -3393,6 +4347,7 @@ function renderLibrary(){
             </div>
 
           </div>
+
 
           <div class="folder-actions">
 
@@ -3448,51 +4403,46 @@ function materialCard(m){
         ${escapeHtml(m.date || "")}
       </div>
 
+
       <div class="content-actions">
 
-        <button
-          class="small-btn"
-          onclick="openMaterial(${m.id})">
+        <button class="small-btn"
+                onclick="openMaterial(${m.id})">
           📖 Open
         </button>
 
-        <button
-          class="small-btn"
-          onclick="downloadMaterial(${m.id})">
+        <button class="small-btn"
+                onclick="downloadMaterial(${m.id})">
           📥 Download
         </button>
 
-        <button
-          class="small-btn"
-          onclick="likeContent('material-${m.id}')">
+        <button class="small-btn"
+                onclick="likeContent('material-${m.id}')">
           ❤️ Like
         </button>
 
-        <button
-          class="small-btn"
-          onclick="shareContent('${escapeHtml(m.title)}')">
+        <button class="small-btn"
+                onclick="shareContent('${escapeHtml(m.title)}')">
           🔗 Share
         </button>
 
-        <button
-          class="small-btn"
-          onclick="saveContent('material-${m.id}','${escapeHtml(m.title)}')">
+        <button class="small-btn"
+                onclick="saveContent('material-${m.id}','${escapeHtml(m.title)}')">
           🔖 Save
         </button>
 
       </div>
 
+
       <div class="content-actions">
 
-        <button
-          class="small-btn"
-          onclick="moveMaterial(${m.id})">
+        <button class="small-btn"
+                onclick="moveMaterial(${m.id})">
           📂 Move
         </button>
 
-        <button
-          class="small-btn"
-          onclick="deleteMaterial(${m.id})">
+        <button class="small-btn"
+                onclick="deleteMaterial(${m.id})">
           🗑️ Delete
         </button>
 
@@ -3531,15 +4481,14 @@ function moveMaterial(id){
     );
 
 
-  if(!material)
-    return;
+  if(!material) return;
 
 
   const folderNames =
     folders
       .map(
         (f,index) =>
-          (index + 1) +
+          (index+1) +
           ". " +
           f.name
       )
@@ -3553,17 +4502,18 @@ function moveMaterial(id){
     );
 
 
-  if(answer === null)
-    return;
+  if(answer === null) return;
 
 
   const number =
     Number(answer);
 
 
-  if(!number ||
-     number < 1 ||
-     number > folders.length){
+  if(
+    !number ||
+    number < 1 ||
+    number > folders.length
+  ){
 
     showToast(
       "Invalid folder number"
@@ -3574,7 +4524,7 @@ function moveMaterial(id){
 
 
   const folder =
-    folders[number - 1];
+    folders[number-1];
 
 
   material.folderId =
@@ -3597,8 +4547,12 @@ function moveMaterial(id){
 
 function getFileType(m){
 
-  if(m.type === "application/pdf")
+  if(
+    m.type ===
+    "application/pdf"
+  )
     return "PDF";
+
 
   if(
     m.name &&
@@ -3608,6 +4562,7 @@ function getFileType(m){
     )
   )
     return "Word";
+
 
   return "Document";
 
@@ -3622,8 +4577,7 @@ function openMaterial(id){
     );
 
 
-  if(!material)
-    return;
+  if(!material) return;
 
 
   const win =
@@ -3633,12 +4587,16 @@ function openMaterial(id){
   if(win){
 
     win.document.write(`
-      <title>${escapeHtml(material.title)}</title>
+
+      <title>
+        ${escapeHtml(material.title)}
+      </title>
 
       <iframe
         src="${material.data}"
         style="width:100%;height:100vh;border:0">
       </iframe>
+
     `);
 
   }
@@ -3654,8 +4612,7 @@ function downloadMaterial(id){
     );
 
 
-  if(!material)
-    return;
+  if(!material) return;
 
 
   const a =
@@ -3690,9 +4647,7 @@ function deleteMaterial(id){
 
   if(!confirm(
     "Delete this material?"
-  )){
-    return;
-  }
+  )) return;
 
 
   materials =
@@ -3764,7 +4719,10 @@ function renderAdminTeachings(){
         </b>
 
         <div class="muted">
-          ${escapeHtml(t.category || "Bible Teaching")}
+          ${escapeHtml(
+            t.category ||
+            "Bible Teaching"
+          )}
         </div>
 
         <br>
@@ -3800,7 +4758,9 @@ function renderAdminSongs(){
 
     box.innerHTML =
       `<div class="empty">
-        No songs uploaded.
+        No songs uploaded yet.
+        <br><br>
+        Open Songs & Upload to add songs.
       </div>`;
 
     return;
@@ -3808,35 +4768,55 @@ function renderAdminSongs(){
 
 
   box.innerHTML =
-    songs.map(s => `
+    songs.map(s => {
 
-      <div class="file-row">
+      const folder =
+        songFolders.find(
+          f => f.id === s.folderId
+        );
 
-        <b>
-          🎵 ${escapeHtml(s.title)}
-        </b>
 
-        <div class="muted">
-          ${escapeHtml(s.artist || "")}
+      return `
+
+        <div class="file-row">
+
+          <b>
+            🎵 ${escapeHtml(s.title)}
+          </b>
+
+          <div class="muted">
+            ${escapeHtml(
+              s.artist || ""
+            )}
+          </div>
+
+          <div class="badge">
+            📁 ${escapeHtml(
+              folder
+              ? folder.name
+              : "No Folder"
+            )}
+          </div>
+
+          <br>
+
+          <button
+            class="small-btn"
+            onclick="openSongEditor('${escapeHtml(s.id)}')">
+            ✏️ Edit
+          </button>
+
+          <button
+            class="small-btn"
+            onclick="deleteSong('${escapeHtml(s.id)}')">
+            🗑️ Delete
+          </button>
+
         </div>
 
-        <br>
+      `;
 
-        <button
-          class="small-btn"
-          onclick="openSongEditor('${escapeHtml(s.id)}')">
-          ✏️ Edit
-        </button>
-
-        <button
-          class="small-btn"
-          onclick="deleteSong('${escapeHtml(s.id)}')">
-          🗑️ Delete
-        </button>
-
-      </div>
-
-    `).join("");
+    }).join("");
 
 }
 
@@ -3959,14 +4939,18 @@ function globalSearch(){
     teachings.filter(t =>
       t.title.toLowerCase().includes(query) ||
       t.content.toLowerCase().includes(query) ||
-      (t.category || "").toLowerCase().includes(query)
+      (t.category || "")
+        .toLowerCase()
+        .includes(query)
     );
 
 
   const songResults =
     songs.filter(s =>
       s.title.toLowerCase().includes(query) ||
-      (s.artist || "").toLowerCase().includes(query)
+      (s.artist || "")
+        .toLowerCase()
+        .includes(query)
     );
 
 
@@ -4036,12 +5020,14 @@ function globalSearch(){
           </h3>
 
           <p class="muted">
-            ${escapeHtml(s.artist || "")}
+            ${escapeHtml(
+              s.artist || ""
+            )}
           </p>
 
           <button
             class="small-btn"
-            onclick="showView('songs')">
+            onclick="openSearchSong('${escapeHtml(s.id)}')">
             Open
           </button>
 
@@ -4099,6 +5085,27 @@ function globalSearch(){
 
   box.innerHTML =
     html;
+
+}
+
+
+function openSearchSong(id){
+
+  const song =
+    songs.find(
+      s => s.id === id
+    );
+
+
+  if(!song) return;
+
+
+  showView("songs");
+
+
+  if(song.folderId){
+    openSongFolder(song.folderId);
+  }
 
 }
 
@@ -4314,13 +5321,9 @@ function renderMonetization(){
 function addDemoRevenue(){
 
   revenue.ads += 25;
-
   revenue.premium += 40;
-
   revenue.downloads += 15;
-
   revenue.donations += 30;
-
   revenue.sponsorship += 50;
 
 
@@ -4530,6 +5533,7 @@ function renderWithdrawalHistory(){
 
         </div>
 
+
         <div class="muted"
              style="margin-top:8px">
 
@@ -4562,9 +5566,7 @@ function resetMonetization(){
 
   if(!confirm(
     "Reset all prototype monetization data?"
-  )){
-    return;
-  }
+  )) return;
 
 
   stats = {
@@ -4667,6 +5669,8 @@ function showToast(message){
 /* =========================================================
    INITIALIZATION
 ========================================================= */
+
+initializeSongFolders();
 
 renderTeachings();
 
