@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>የኢየሱስ ልጆች Apostolic Media</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #172033;
+    }
+
+    header {
+      background: #101d3a;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      opacity: 0.85;
+    }
+
+    .hero {
+      margin: 20px;
+      padding: 25px;
+      border-radius: 18px;
+      background: #d9b44a;
+      color: #101d3a;
+    }
+
+    .hero h2 {
+      margin-bottom: 10px;
+    }
+
+    .container {
+      padding: 0 20px 90px;
+    }
+
+    .section-title {
+      margin: 25px 0 12px;
+      font-size: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px 12px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .ad {
+      margin-top: 20px;
+      padding: 18px;
+      text-align: center;
+      border: 1px dashed #aaa;
+      border-radius: 15px;
+      background: white;
+      color: #777;
+    }
+
+    nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 5px;
+      box-shadow: 0 -3px 15px rgba(0,0,0,0.1);
+    }
+
+    nav div {
+      text-align: center;
+      font-size: 12px;
+    }
+
+    nav span {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>✝️ የኢየሱስ ልጆች</h1>
+  <p>Apostolic Media</p>
+</header>
+
+<div class="container">
+
+  <div class="hero">
+    <h2>ወደ አፕሊኬሽናችን እንኳን በደህና መጡ</h2>
+    <p>የመጽሐፍ ቅዱስ ትምህርቶች፣ መዝሙሮች፣ መጻሕፍት እና ቪዲዮዎች።</p>
+  </div>
+
+  <h2 class="section-title">ዋና ክፍሎች</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">📖</div>
+      <h3>Bible Teaching</h3>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎵</div>
+      <h3>Songs</h3>
+    </div>
+
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>Library</h3>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎥</div>
+      <h3>Videos</h3>
+    </div>
+
+  </div>
+
+  <h2 class="section-title">Premium</h2>
+
+  <div class="card">
+    <div class="icon">⭐</div>
+    <h3>Premium Content</h3>
+    <p>ልዩ የጥናት እና የመማሪያ ይዘቶች</p>
+  </div>
+
+  <div class="ad">
+    📢 Advertisement Area
+  </div>
+
+  <h2 class="section-title">ድጋፍ ያድርጉ</h2>
+
+  <div class="card">
+    <div class="icon">❤️</div>
+    <h3>Support the Ministry</h3>
+    <p>የሚዲያ አገልግሎቱን ለመደገፍ</p>
+  </div>
+
+</div>
+
+<nav>
+  <div><span>🏠</span>Home</div>
+  <div><span>📖</span>Teaching</div>
+  <div><span>🎵</span>Songs</div>
+  <div><span>📚</span>Library</div>
+  <div><span>👤</span>Account</div>
+</nav>
+
+</body>
+</html>
