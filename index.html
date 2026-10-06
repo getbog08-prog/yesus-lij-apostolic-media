@@ -904,6 +904,73 @@ label{
   <div class="section-title">
     <h2>👤 Account</h2>
   </div>
+  <div class="card" id="authCard">
+  <h3>🔐 Account Sign In</h3>
+
+  <p class="muted" id="authStatus">
+    Sign in or create an account.
+  </p>
+
+  <div id="authForms">
+
+    <label>Email</label>
+    <input
+      type="email"
+      id="authEmail"
+      placeholder="you@example.com"
+      autocomplete="email"
+    >
+
+    <label>Password</label>
+    <input
+      type="password"
+      id="authPassword"
+      placeholder="Password"
+      autocomplete="current-password"
+    >
+
+    <button
+      class="btn btn-primary full"
+      onclick="signInUser()">
+      🔑 Sign In
+    </button>
+
+    <button
+      class="btn btn-gold full"
+      style="margin-top:8px"
+      onclick="signUpUser()">
+      📝 Create Account
+    </button>
+
+    <button
+      class="btn btn-light full"
+      style="margin-top:8px"
+      onclick="resetUserPassword()">
+      🔁 Forgot Password
+    </button>
+
+  </div>
+
+  <div id="authLoggedIn" style="display:none">
+
+    <p>
+      <b id="authUserEmail"></b>
+    </p>
+
+    <p
+      class="muted"
+      id="authUserRole"
+      style="margin-top:6px">
+    </p>
+
+    <button
+      class="btn btn-primary full"
+      style="margin-top:12px"
+      onclick="signOutUser()">
+      🚪 Sign Out
+    </button>
+
+  </div>
 
   <div class="card">
 
