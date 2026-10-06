@@ -2828,7 +2828,9 @@ function renderSongLanguageFolders(
 
     html += `
 
-      <div class="language-folder">
+      <div class="language-folder"
+           style="cursor:pointer"
+           onclick="openSongFolder('${root.id}')">
 
         <div class="folder-top">
 
@@ -2859,7 +2861,7 @@ function renderSongLanguageFolders(
         <div class="folder-actions">
 
           <button class="btn btn-primary"
-                  onclick="openSongFolder('${root.id}')">
+                  onclick="event.stopPropagation();openSongFolder('${root.id}')">
             📂 Open Existing Songs
           </button>
 
@@ -2889,7 +2891,7 @@ function renderSongLanguageFolders(
   }
 
   /*
-    Every child folder becomes a real upload location.
+    Every child folder becomes a clickable upload location.
   */
 
   html += children.map(folder => {
@@ -2901,7 +2903,9 @@ function renderSongLanguageFolders(
 
     return `
 
-      <div class="language-folder">
+      <div class="language-folder"
+           style="cursor:pointer"
+           onclick="openSongFolder('${folder.id}')">
 
         <div class="folder-top">
 
@@ -2930,18 +2934,23 @@ function renderSongLanguageFolders(
 
         <div class="folder-actions">
 
+          <button class="btn btn-gold"
+                  onclick="event.stopPropagation();openSongUpload('${folder.id}')">
+            ➕ Upload Song
+          </button>
+
           <button class="btn btn-primary"
-                  onclick="openSongFolder('${folder.id}')">
+                  onclick="event.stopPropagation();openSongFolder('${folder.id}')">
             📂 Open
           </button>
 
           <button class="small-btn"
-                  onclick="renameSongFolder('${folder.id}')">
+                  onclick="event.stopPropagation();renameSongFolder('${folder.id}')">
             ✏️ Rename
           </button>
 
           <button class="small-btn"
-                  onclick="deleteSongFolder('${folder.id}')">
+                  onclick="event.stopPropagation();deleteSongFolder('${folder.id}')">
             🗑️ Delete
           </button>
 
