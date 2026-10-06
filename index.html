@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://ordbuuqfelwowlsteaqs.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+"sb_publishable_atIkB9qzRA9hLU_85kk8Cg_tn4m04Ka";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+
+let currentUser = null;
+let currentProfile = null;
+</script>
   
   <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#071a35">
